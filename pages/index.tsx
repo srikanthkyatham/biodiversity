@@ -4,12 +4,12 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Biodiversity</title>
+        <title>Diversity Bio Sciences</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">Welcome to Biodiversity sciences</h1>
+        <h1 className="title">Welcome to Diversity Bio Sciences</h1>
 
         <p className="description">Page is under construction</p>
       </main>
