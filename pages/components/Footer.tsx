@@ -9,21 +9,6 @@ export default function Footer() {
         <p>ACME Industries Ltd.</p>
       </div>
       <div>
-        <span className="footer-title">Services</span>
-        <Link href="">
-          <a className="link link-hover">Branding</a>
-        </Link>
-        <Link href="">
-          <a className="link link-hover">Design</a>
-        </Link>
-        <Link href="">
-          <a className="link link-hover">Marketing</a>
-        </Link>
-        <Link href="">
-          <a className="link link-hover">Advertisement</a>
-        </Link>
-      </div>
-      <div>
         <span className="footer-title">Company</span>
         <Link href="">
           <a className="link link-hover">About us</a>
