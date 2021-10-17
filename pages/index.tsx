@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
-import Layout from "../components/Layout";
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Diversity Bio Sciences</title>
         <link rel="icon" href="/favicon.ico" />
@@ -163,6 +162,6 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
-    </Layout>
+    </>
   );
 }
