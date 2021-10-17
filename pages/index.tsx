@@ -1,8 +1,10 @@
 import Head from "next/head";
+import Footer from "./components/Footer";
+import Layout from "./components/Layout";
 
 export default function Home() {
   return (
-    <div className="container">
+    <Layout>
       <Head>
         <title>Diversity Bio Sciences</title>
         <link rel="icon" href="/favicon.ico" />
@@ -14,15 +16,7 @@ export default function Home() {
         <p className="description">Page is under construction</p>
       </main>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
+      <Footer />
 
       <style jsx>{`
         .container {
@@ -169,6 +163,6 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
+    </Layout>
   );
 }
