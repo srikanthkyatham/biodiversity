@@ -4,9 +4,8 @@ import Image from "next/image";
 import { Fragment } from "react";
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
+  { name: "Products", href: "#" },
+  { name: "Careers", href: "#" },
   { name: "Company", href: "#" },
 ];
 
