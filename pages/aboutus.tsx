@@ -1,3 +1,3 @@
 export default function Aboutus() {
-  return <div>"something"</div>;
+  return <div>something</div>;
 }
