@@ -31,3 +31,9 @@ yarn-error.log*
 
 # TODO
 TODO.md
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
