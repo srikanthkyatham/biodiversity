@@ -116,8 +116,30 @@ export default function Home() {
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Page is under construction.
+                Diversity Biosciences is engaged in the custom synthesis,
+                development, and supply of Impurities/metabolites,
+                intermediates, and API's. Our main objective is to provide
+                critical products required in the pharmaceutical industry in a
+                time-efficient manner.
               </p>
+
+              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                Why choose Diversity Biosciences?
+                <br />
+                Well experienced in synthesis and supply of high-quality Organic
+                compounds in any quantity. Our well-trained team can handle
+                complex projects and expertise in using the latest techniques to
+                synthesize organic molecules etc
+              </p>
+
+              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                Services:
+                <br />
+                Custom synthesis of complex organic molecules Custom synthesis
+                of Impurity mg to gm Pharmaceutical reference standards Stable
+                isotope-labeled products etc
+              </p>
+
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <a
