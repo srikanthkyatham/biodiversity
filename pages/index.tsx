@@ -2,7 +2,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import { Fragment } from "react";
-import { description } from "./constants";
+import { description } from "../lib/constants";
 
 const navigation = [
   { name: "Products", href: "#" },

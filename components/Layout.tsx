@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { ReactNode } from "react";
-import { description } from "../pages/constants";
+import { description } from "../lib/constants";
 
 type Props = {
   children: ReactNode;
