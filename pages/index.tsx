@@ -2,6 +2,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import { Fragment } from "react";
+import { description } from "./constants";
 
 const navigation = [
   { name: "Products", href: "#" },
@@ -116,11 +117,7 @@ export default function Home() {
                 </span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Diversity Biosciences is engaged in the custom synthesis,
-                development, and supply of Impurities/metabolites,
-                intermediates, and API&apos;s. Our main objective is to provide
-                critical products required in the pharmaceutical industry in a
-                time-efficient manner.
+                {description}
               </p>
 
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
