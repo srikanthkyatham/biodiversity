@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slick-dots {
+  left: 10px;
+  margin-bottom: 21px !important;
+  width: 100px !important;
+}
+
+.brand-bg-red-color {
+  background-color: #b12e2a !important;
+}
+
+.brand-bg-gray-color {
+  background-color: #202020;
+}
+
+.products-bg-color {
+  background-color: #8080801f
+}
+
+.description-text {
+  font-family: "Roboto"
+}
+
+.products::-webkit-scrollbar {
+  display: none;
+}
+
+.dots-i:global(li.slick-active) button {
+  opacity: .75;
+  color: #000
+}
+
+.slick-dots li button:before {
+  background-color: #b12e2a;
+  height: 10px;
+  width: 10px;
+  text-indent: -9999px;
+  overflow:hidden; 
+  border-radius: 50%;
+}
