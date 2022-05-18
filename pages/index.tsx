@@ -12,10 +12,9 @@ export default function Home() {
       <Header />
       <NavigationHeader />
       <main>
-      <div style={{ width: 'calc(100vw)', height: '500px', position: 'relative', backgroundImage: 'url(mainimage.jpeg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }} />
+      <div style={{ width: 'calc(100vw)', height: 'calc(100vh)', position: 'relative', backgroundImage: 'url(/MainImage.jpeg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }} />
         
       <Description />
-      <Products />
       <UpcomingProducts />
       <ContactUs />
       </main>

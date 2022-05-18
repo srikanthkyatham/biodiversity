@@ -1,4 +1,26 @@
 const ContactUs = () => {
+
+  const sendMail = async (data: Object) => {
+
+    try {
+      await fetch("/api/contact", {
+        "method": "POST",
+        "headers": { "content-type": "application/json" },
+        "body": JSON.stringify({
+          name: 'Nikhil',
+          email: 'j@example.com',
+          mobileNo: '5123123',
+          products: '123413',
+          others: '2323'
+        })
+      })
+
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
   return (
     <div className="flex flex-col items-center my-10" id="contactus">
       <h3 className="text-4xl">CONTACT US</h3>
