@@ -15,6 +15,7 @@ export default function Layout({ children }: Props) {
         <title>{description}</title>
         <meta property="og:title" content={description} key="title" />
         <meta name="description" content={description} />
+        <link rel="icon" href="/android-icon-36x36.png" />
       </Head>
       <div>{children}</div>
     </>

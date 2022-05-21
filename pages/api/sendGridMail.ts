@@ -1,19 +1,27 @@
 /* eslint-disable import/no-anonymous-default-export */
 import sgMail from '@sendgrid/mail'
 import { NextApiRequest, NextApiResponse } from 'next';
+import { string } from 'prop-types';
 import Config from '../../app.json'
 
-sgMail.setApiKey('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')
+const key:string = process.env.EMAIL_API_KEY
+
+sgMail.setApiKey(key)
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+
   const { email, mobileNo, products, name, others } = req.body
   const msg = {
     to: Config.email,
-    from: email,
-    subject: products,
+    from: Config.secondary_email,
+    subject: 'Contact From Webpage',
     name,
     text: others,
-    html: `<a className="font-semibold" href=${`tel:${mobileNo}`}>Phone: ${mobileNo}</a>`
+    html: `<div><a className="font-semibold" href=${`tel:${mobileNo}`}>Phone: ${mobileNo}</a>
+    <br></br>
+    <a className="font-semibold" href=${`mailto:${email}`}>Email: ${email}</a>
+    <br><</br>
+    <p>${products}</p>`
   };
 
   try {

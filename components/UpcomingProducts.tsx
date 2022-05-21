@@ -12,16 +12,18 @@ const LatestProducts = () => {
 
   return (
     <div className="my-14" id="services">
+      <h2 className="text-3xl ml-5">Our Services</h2>
       <div className="w-10/12 m-auto shadow-lg shadow-blue-500/50 p-10">
         <Slider
           {...settings}
         >
           <div className='!flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
-            <div>
-              <h2 className="font-semibold description-text">Why choose bio diversity sciences?</h2>
-              <p className="text-gray text-sm description-text">
-                Diversity about real world scenario for the projects maintaining about the pharameutical products which are 100% natural and no.1 products in the
-                entire country of the world of the earth
+            <div className="space-y-2">
+              <h2 className="font-semibold text-2xl">SYNTHETIC CHEMICAL SERVICES</h2>
+              <p className="text-gray text-sm description-text text-xl">
+                Experienced chemistry teams work on diversified synthetic routes. Knowledge, experience and chemical  synthesis labs, help to carry out complex custom synthesis and collaborative medicinal chemistry program needs for customers. Quality and timely chemical  sourcing occelerate our programs a step further. The synthetic team is skilled to undertake challenges in synthetic organic chemistry, involving various types of chemistry to deliver compounds to customer requirements. 
+                {'\n'}
+                Our multidisciplinary scientific team led by domain experts has helped our clients in successful & timely project submissions. 
               </p>
             </div>
             <Image
@@ -33,11 +35,11 @@ const LatestProducts = () => {
             />
           </div>
           <div className='!flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
-            <div>
-              <h2 className="font-semibold description-text">Why choose bio diversity sciences?</h2>
-              <p className="text-gray text-sm description-text">
-                Diversity about real world scenario for the projects maintaining about the pharameutical products which are 100% natural and no.1 products in the
-                entire country of the world of the earth
+            <div className="space-y-2">
+              <h2 className="font-semibold text-2xl">CUSTOM SYNTHESIS</h2>
+              <p className="text-gray text-sm description-text text-xl">
+                Diversity Bio Sciences specialize in offering flexible and cost-effective solutions to its clients globally to meet their  custom organic synthesis requirements. With deep knowledge, experience and infrastructure, our team has extensive analytical and synthetic chemical capabilities in providing a competitive edge to your custom synthesis 
+                needs. 
               </p>
             </div>
             <Image
@@ -49,12 +51,17 @@ const LatestProducts = () => {
             />
           </div>
           <div className='!flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
-            <div>
-              <h2 className="font-semibold description-text">Why choose bio diversity sciences?</h2>
-              <p className="text-gray text-sm description-text">
-                Diversity about real world scenario for the projects maintaining about the pharameutical products which are 100% natural and no.1 products in the
-                entire country of the world of the earth
-              </p>
+            <div className="space-y-2">
+              <h2 className="font-semibold text-2xl">OUR SERVICES</h2>
+              <ul className="list-disc space-y-3 text-xl">
+                <li>Custom synthesis of complex organic molecules</li>
+                <li>Pharmaceutical Reference standards</li>
+                <li>Stable isotope label products</li>
+                <li>Drug metabolites & Glucuronides</li>
+                <li>Isolation & Structure elucidation of unknown impurities</li>
+                <li>Competition evaluation of Geno Toxic impurities</li>
+                <li>Contract Research services- Synthesis of intermediates & APl's </li>
+              </ul>
             </div>
             <Image
               className=""
