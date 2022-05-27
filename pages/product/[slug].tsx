@@ -93,7 +93,7 @@ export async function getStaticPaths() {
   console.log({ paths });
   return {
     paths: paths.map((slug: any) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 
