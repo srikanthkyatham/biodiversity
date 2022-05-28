@@ -20,9 +20,9 @@ export default function Home() {
       <main>
         <MainImage /> 
         <Description />
-      <Products />
-      <UpcomingProducts />
-      <ContactUs />
+        {/* <Products /> */}
+        <UpcomingProducts />
+        <ContactUs />
       </main>
     </div>
   );

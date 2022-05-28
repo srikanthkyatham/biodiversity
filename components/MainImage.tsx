@@ -4,7 +4,6 @@ import { Particle } from 'jparticles'
 const MainImage = () => {
 
   useEffect(() => {
-    console.log('here', window)
     if(process.browser) {
       new Particle('#demo', {
         proximity: 190
@@ -13,7 +12,7 @@ const MainImage = () => {
   }, [])
   
   return (
-    <div style={{ width: 'calc(100vw)', height: 'calc(100vh)', position: 'relative', backgroundImage: 'url(/MainImage.jpeg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }} id='demo' />
+    <div className='main-image' style={{ width: 'calc(99vw)', height: 'calc(100vh)', position: 'relative', backgroundImage: 'url(/MainImage.jpeg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }} id='demo' />
   );
 }
 

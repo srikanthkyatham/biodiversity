@@ -7,7 +7,7 @@ const Description = () => {
       organization for Custom synthesis of 
       new products, committed to provide 
       services / solutions to Pharmaceutical 
-      & Biotech industries. 
+      &amp; Biotech industries. 
       </h1>
       <div className="text-center">
         <p className="text-gray text-xl description-text">
@@ -16,13 +16,13 @@ const Description = () => {
       </div>
       <div className="text-center">
         <p className="text-gray text-xl description-text">
-        Diversity Bio Sciences has pioneered in customized Drug Impurities, Drug Metabolites & Complex research 
-        products in collaborations with Pharmaceutical companies and Biotech's. 
+        Diversity Bio Sciences has pioneered in customized Drug Impurities, Drug Metabolites &amp; Complex research 
+        products in collaborations with Pharmaceutical companies and Biotechs. 
         </p>
       </div>
       <div className="text-center">
         <p className="text-gray text-xl description-text">
-        Diversity Bio Sciences has developed deep expertise in Custom Synthesis, Intermediates & APl's development 
+        Diversity Bio Sciences has developed deep expertise in Custom Synthesis, Intermediates &amp; APl&apos;s development 
         and has continuously invested in its people resources and 
         infrastructure. 
         </p>
@@ -30,7 +30,7 @@ const Description = () => {
       <div className="text-center">
         <h2 className="font-semibold text-2xl description-text">OUR MISSION</h2>
         <p className="text-gray text-xl description-text">
-          "Diversity Bio Sciences to be the most trusted global innovation center of innovative solutions for Pharma & Biotech companies, In terms of Drug Development & Custom synthesis”
+        &quot;Diversity Bio Sciences to be the most trusted global innovation center of innovative solutions for Pharma &amp; Biotech companies, In terms of Drug Development &amp; Custom synthesis”
         </p>
       </div>
       <div className="text-center">

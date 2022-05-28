@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { string } from 'prop-types';
 import Config from '../../app.json'
 
-const key:string = process.env.EMAIL_API_KEY
+const key:string = process.env.EMAIL_API_KEY!
 
 sgMail.setApiKey(key)
 
