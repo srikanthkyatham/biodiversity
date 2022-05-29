@@ -2,6 +2,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import groq from "groq";
 import client from "../../client";
+
 function urlFor(source: SanityImageSource) {
   return imageUrlBuilder(client).image(source);
 }
@@ -26,7 +27,7 @@ interface Props {
   product: ProductType;
 }
 
-// http://localhost:3000/post/product1
+// http://localhost:3000/product/product1
 const Product = ({ product }: Props): JSX.Element => {
   console.log({ product });
   const {
@@ -80,7 +81,7 @@ const query = groq`*[_type == "product" && slug.current == $slug][0]{
   "authorImage": author->image,
 }`;
 
-// http://localhost:3000/post/product1
+// http://localhost:3000/product/product1
 export async function getStaticPaths() {
   // demystify the magic string
   // make them typed or understand what they are doing
@@ -92,7 +93,7 @@ export async function getStaticPaths() {
   console.log({ paths });
   return {
     paths: paths.map((slug: any) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
 
@@ -101,9 +102,7 @@ export async function getStaticProps(context: {
 }) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params;
-  console.log({ context });
   const product = await client.fetch(query, { slug });
-  console.log({ product });
   return {
     props: {
       product,
