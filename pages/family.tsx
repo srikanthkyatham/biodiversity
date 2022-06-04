@@ -1,5 +1,6 @@
 import groq from "groq";
 import client from "../client";
+import Families from '../components/Families'
 
 interface FamilyType {
   title: string;
@@ -9,10 +10,7 @@ interface Props {
   families: Array<FamilyType>;
 }
 
-const Families = ({ families }: Props): JSX.Element => {
-  console.log({ families });
-  return <div />;
-};
+const FamiliesComponent = (props: any) => <Families {...props} />
 
 const query = groq`*[_type == "family"]{
   title,
@@ -29,4 +27,4 @@ export async function getStaticProps(context: any) {
   };
 }
 
-export default Families;
+export default FamiliesComponent;

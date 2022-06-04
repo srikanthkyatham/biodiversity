@@ -6,7 +6,7 @@ const MainImage = () => {
   useEffect(() => {
     if(process.browser) {
       new Particle('#demo', {
-        proximity: 190
+        proximity: 100
       })
     }
   }, [])

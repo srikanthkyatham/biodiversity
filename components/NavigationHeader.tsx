@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import Image from "next/image";
-import { Popover, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Fragment } from "react";
+import { Transition } from "@headlessui/react";
 
 const navigation = [
   { name: "HOME", href: "#header" },
@@ -12,9 +9,33 @@ const navigation = [
   { name: "CONTACT US", href: "#contactus" }
 ];
 
-const NavigationHeader = () => {
+interface IMyProps {
+  classStyle: any;
+  listView: any;
+}
+
+const ListView = (props: IMyProps) => 
+  <div className={props.classStyle}>
+    {navigation.map((item) => (
+      <a
+        key={item.name}
+        href={item.href}
+        className={!props.listView ? "focus:bg-red-500 text-white block px-3 py-2 rounded-md text-base font-medium" : 
+        "text-white block px-3 py-2 rounded-md text-base font-medium"}
+        >
+        {item.name}
+      </a>
+    ))}
+  </div>
+
+const NavigationHeader = ({ listView = false, classStyle = '' }) => {
 
   const [isOpen, setIsOpen] = useState(false);
+
+  if(listView) {
+    return <ListView classStyle={classStyle} listView/>
+  }
+  
 
   return (
     <div>
@@ -24,17 +45,7 @@ const NavigationHeader = () => {
           <div className="flex md:justify-center md:items-center h-16">
             <div className="flex items-center">
               <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
-                {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="focus:bg-red-500 text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                {item.name}
-              </a>
-            ))}
-                </div>
+                <ListView classStyle='ml-10 flex items-baseline space-x-4' listView/>
               </div>
             </div>
             <div className="-mr-2 flex md:hidden">

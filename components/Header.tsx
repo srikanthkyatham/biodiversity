@@ -1,4 +1,6 @@
-import Config from '../app.json'
+/* eslint-disable @next/next/no-img-element */
+import MobileDetails from './Mobile'
+import EmailDetails from './Email'
 
 const Header = () => {
   return (
@@ -13,8 +15,8 @@ const Header = () => {
         </div>
       </div> */}
       <div className="flex flex-col md:items-end space-y-1">
-        <a className="font-semibold" href={`tel:${Config.mobile_no}`}>Phone: {Config.mobile_no}</a>
-        <a className="font-semibold" href={`mailto:${Config.email}`}>Email: {Config.email}</a>
+        <MobileDetails />
+        <EmailDetails />
       </div>
     </div>
   );

@@ -1,40 +1,63 @@
-import Image from "next/image";
-import Link from "next/link";
+import MobileDetails from './Mobile'
+import EmailDetails from './Email'
+import NavigationHeader from './NavigationHeader'
 
-export default function Footer() {
+const socialMediaLinks = [
+  {
+    name: 'fa fa-brands fa-facebook-f',
+    link: ''
+  },
+  {
+    name: 'fa fa-brands fa-instagram',
+    link: ''
+  },
+  {
+    name: 'fa fa-brands fa-twitter',
+    link: ''
+  },
+  {
+    name: 'fa-brands fa-linkedin',
+    link: ''
+  }
+]
+
+const Footer = () => {
   return (
-    <footer className="p-10 footer bg-base-200 text-base-content">
-      <div>
-        <Image src="/images/logo.webp" width="50" height="50" alt="logo" />
-        <p>ACME Industries Ltd.</p>
-      </div>
-      <div>
-        <span className="footer-title">Company</span>
-        <Link href="">
-          <a className="link link-hover">About us</a>
-        </Link>
-        <Link href="">
-          <a className="link link-hover">Contact</a>
-        </Link>
-        <Link href="">
-          <a className="link link-hover">Jobs</a>
-        </Link>
-        <Link href="">
-          <a className="link link-hover">Press kit</a>
-        </Link>
-      </div>
-      <div>
-        <span className="footer-title">Legal</span>
-        <Link href="">
-          <a className="link link-hover">Terms of use</a>
-        </Link>
-        <Link href="">
-          <a className="link link-hover">Privacy policy</a>
-        </Link>
-        <Link href="">
-          <a className="link link-hover">Cookie policy</a>
-        </Link>
-      </div>
-    </footer>
+    <div className="bg-black pt-5">
+      <div className="px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
+        <div className="p-5">
+          <h3 className="text-white">Corporate Office</h3>
+          <p className="text-white">Diversity Bio Sciences Pvt. Ltd. 
+            <br></br>
+            Plot No 75 / A. IDA Mallapur, 
+            <br></br>
+            Hyderabad 500076 
+            <br></br>
+            <MobileDetails /> 
+            <br></br>
+            <EmailDetails />
+          </p>
+        </div>
+          <div className="p-5">
+            <div className="text-sm uppercase text-white font-bold">Our Branches</div>
+            <p className="text-white">Hillsborough, Auckland, New Zealand</p>
+            <p className="text-white">Bedfont Lane, Feltham, Middlesex, England United Kingdom</p>
+            <p className="text-white">Letzenbergstraße, Rauenberg, Germany</p>
+            <p className="text-white">Phoenix, AZ, USA</p>
+          </div>
+          <div className="p-5">
+            <div className="text-sm uppercase text-white font-bold">Site Map</div>
+            <NavigationHeader listView={true} classStyle='flex flex-col' />
+          </div>
+          <div className="p-5">
+            <div className="text-sm uppercase text-white font-bold">Social Media</div>
+            {
+              socialMediaLinks.map((item,index) => <a key={index.toString()} href={item.link}><i className={item.name} style={{ color: 'white', marginRight: 10 }}></i></a>)
+            }
+          </div>
+        </div>
+    </div>
   );
 }
+
+export default Footer

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
@@ -27,14 +28,12 @@ const LatestProducts = () => {
                 </p>
                 <p>Our multidisciplinary scientific team led by domain experts has helped our clients in successful & timely project submissions. </p>
               </div>
-              <Image
+              <img
                 src="/services1.jpg"
-                alt="Chemistry Services"
-                width={200}
-                height={200}
+                alt="Synthetic Chemistry Services"
+                style={{ width: 250, height: 250 }}
               />
             </div>
-            
           </div>
           <div>
             <div className='flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
@@ -45,11 +44,10 @@ const LatestProducts = () => {
                   needs. 
                 </p>
               </div>
-              <Image
+              <img
                 src="/services2.jpg"
                 alt="Custom Synthesis"
-                width={200}
-                height={200}
+                style={{ width: 250, height: 250 }}
               />
             </div>
           </div>
@@ -67,11 +65,10 @@ const LatestProducts = () => {
                   <li>Contract Research services- Synthesis of intermediates &amp; APl&apos;s </li>
                 </ul>
               </div>
-              <Image
+              <img
                 src="/services3.jpg"
                 alt="Our Services"
-                width={200}
-                height={200}
+                style={{ width: 250, height: 250 }}
               />
             </div>
           </div>
