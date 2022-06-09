@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react"
 
-const ContactUs = ({ displayEnquiryForm = false, onConfirmation }) => {
+interface ContactUsProps {
+  displayEnquiryForm: boolean;
+  onConfirmation: () => void;
+
+}
+
+const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
 
   const [loading,setLoading] = useState(false)
   const [formInputs,setFormInputs] = useState({

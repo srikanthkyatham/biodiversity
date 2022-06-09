@@ -1,5 +1,10 @@
 import Image from "next/image"
-import ReactWaterMark from 'react-watermark-component'
+import dynamic from "next/dynamic"
+
+const ReactWaterMark = dynamic(
+  () => import('react-watermark-component'),
+  { ssr: false }
+)
 
 const Product = ({ product = {
   categories: '',
@@ -16,6 +21,8 @@ const Product = ({ product = {
   technicalData: '1523123',
   reference: '1234'
 } }) => {
+
+  console.log(product)
 
   const options = {
     chunkWidth: 480,

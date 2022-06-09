@@ -19,7 +19,7 @@ export default function Home() {
         <Description />
         {/* <Products /> */}
         <UpcomingProducts />
-        <ContactUs />
+        <ContactUs displayEnquiryForm={false} onConfirmation={() => console.log('')} />
         <Accreditation />
       </main>
     </div>
