@@ -5,7 +5,7 @@
 .slick-dots {
   left: 10px;
   margin-bottom: 21px !important;
-  width: 100px !important;
+  width: 120px !important;
 }
 
 .brand-bg-red-color {
@@ -61,8 +61,15 @@
 	margin-top:16px;
 }
 
+.main-image {
+  background-image: url(/MainImage.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 @media only screen and (max-width: 800px) {
   .main-image {
+    background-image: url(/MainImageMobile.jpg);
     height: 300px !important;
   }
 }

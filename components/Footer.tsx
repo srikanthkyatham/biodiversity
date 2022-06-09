@@ -5,26 +5,26 @@ import NavigationHeader from './NavigationHeader'
 const socialMediaLinks = [
   {
     name: 'fa fa-brands fa-facebook-f',
-    link: ''
+    link: 'https://www.facebook.com/profile.php?id=100049784684352'
   },
   {
     name: 'fa fa-brands fa-instagram',
-    link: ''
+    link: 'https://www.instagram.com/diversitybiosciences/'
   },
   {
     name: 'fa fa-brands fa-twitter',
-    link: ''
+    link: 'https://twitter.com/diversityDBS'
   },
   {
     name: 'fa-brands fa-linkedin',
-    link: ''
+    link: 'https://www.linkedin.com/company/80783383/admin/'
   }
 ]
 
 const Footer = () => {
   return (
     <div className="bg-black pt-5">
-      <div className="px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
+      <div className="flex flex-col justify-around px-4 sm:px-6 text-gray-800 md:flex-row">
         <div className="p-5">
           <h3 className="text-white">Corporate Office</h3>
           <p className="text-white">Diversity Bio Sciences Pvt. Ltd. 
@@ -40,10 +40,12 @@ const Footer = () => {
         </div>
           <div className="p-5">
             <div className="text-sm uppercase text-white font-bold">Our Branches</div>
-            <p className="text-white">Hillsborough, Auckland, New Zealand</p>
-            <p className="text-white">Bedfont Lane, Feltham, Middlesex, England United Kingdom</p>
-            <p className="text-white">Letzenbergstraße, Rauenberg, Germany</p>
-            <p className="text-white">Phoenix, AZ, USA</p>
+            <div className='flex flex-col flex-wrap w-80 md:flex-row'>
+              <p className="text-white mt-5 md:w-36">Hillsborough, Auckland, New Zealand</p>
+              <p className="text-white mt-5 md:w-36">Bedfont Lane, Feltham, Middlesex, England United Kingdom</p>
+              <p className="text-white mt-5 md:w-36">Letzenbergstraße, Rauenberg, Germany</p>
+              <p className="text-white mt-5 md:w-36">Phoenix, AZ, USA</p>
+            </div>
           </div>
           <div className="p-5">
             <div className="text-sm uppercase text-white font-bold">Site Map</div>

@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import NavigationHeader from '../components/NavigationHeader'
 import { whatsappChat } from '../utils/whatsappChat'
 import Footer from '../components/Footer'
+import EnquiryForm from '../components/EnquiryForm'
 
 type Props = {
   Component: any;
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }: Props) {
         <i className="fa fa-whatsapp my-float"></i>
       </a>
       <Footer />
+      <EnquiryForm />
     </Layout>
   );
 }

@@ -2,6 +2,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import groq from "groq";
 import client from "../../client";
+import ProductsPage from '../../components/ProductsPage'
 
 function urlFor(source: SanityImageSource) {
   return imageUrlBuilder(client).image(source);
@@ -28,42 +29,7 @@ interface Props {
 }
 
 // http://localhost:3000/product/product1
-const Product = ({ product }: Props): JSX.Element => {
-  console.log({ product });
-  const {
-    title = "Missing title",
-    name = "Missing name",
-    categories,
-    mainImage,
-    authorImage,
-  } = product;
-
-  return (
-    <article>
-      <h1>{title}</h1>
-      <span>By {name}</span>
-      {categories && (
-        <ul>
-          Posted in
-          {categories.map((category) => (
-            <li key={category}>{category}</li>
-          ))}
-        </ul>
-      )}
-      {mainImage && (
-        <div>
-          <img src={urlFor(mainImage).width(50).url()} />
-        </div>
-      )}
-
-      {authorImage && (
-        <div>
-          <img src={urlFor(authorImage).width(50).url()} />
-        </div>
-      )}
-    </article>
-  );
-};
+const Product = (props: any) => <ProductsPage {...props} />
 
 const query = groq`*[_type == "product" && slug.current == $slug][0]{
   title,
@@ -82,32 +48,34 @@ const query = groq`*[_type == "product" && slug.current == $slug][0]{
 }`;
 
 // http://localhost:3000/product/product1
-export async function getStaticPaths() {
-  // demystify the magic string
-  // make them typed or understand what they are doing
-  // slug vs the param change - the name of the file should the name of the parameter
-  const paths = await client.fetch(
-    `*[_type == "product" && defined(slug.current)][].slug.current`
-  );
+// export async function getStaticPaths() {
+//   // demystify the magic string
+//   // make them typed or understand what they are doing
+//   // slug vs the param change - the name of the file should the name of the parameter
+//   const paths = await client.fetch(
+//     `*[_type == "product" && defined(slug.current)][].slug.current`
+//   );
 
-  console.log({ paths });
-  return {
-    paths: paths.map((slug: any) => ({ params: { slug } })),
-    fallback: false,
-  };
-}
+//   // console.log({ paths });
+//   return {
+//     paths: paths.map((slug: any) => ({ params: { slug } })),
+//     fallback: false,
+//   };
+// }
 
-export async function getStaticProps(context: {
-  params: { slug?: "" | undefined };
-}) {
-  // It's important to default the slug so that it doesn't return "undefined"
-  const { slug = "" } = context.params;
-  const product = await client.fetch(query, { slug });
-  return {
-    props: {
-      product,
-    },
-  };
-}
+// export async function getStaticProps(context: {
+//   params: { slug?: "" | undefined };
+// }) {
+//   // It's important to default the slug so that it doesn't return "undefined"
+//   const { slug = "" } = context.params;
+//   console.log('heres')
+//   // console.log(slug)
+//   const product = await client.fetch(query, { slug });
+//   return {
+//     props: {
+//       product,
+//     },
+//   };
+// }
 
 export default Product;

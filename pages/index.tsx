@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import Description from '../components/Description'
-import Products from '../components/Products'
+import Products from '../components/Families'
 import UpcomingProducts from '../components/UpcomingProducts'
 import ContactUs from '../components/ContactUs'
 import Accreditation from '../components/Accreditation'

@@ -1,4 +1,5 @@
 export const filterSimilarProducts = (searchText, filterArray, family = false) => {
+  console.log(searchText, filterArray)
   const products = [
     {
       name: '123',
@@ -9,13 +10,13 @@ export const filterSimilarProducts = (searchText, filterArray, family = false) =
   let count = 0
   let filteredProducts
   if(family) {
-    filteredProducts = filterArray.filter(item => item.title.toUpperCase().startsWith(searchText))
+    filteredProducts = filterArray.filter(item => item.title.toLowerCase().startsWith(searchText))
   } else {
     filteredProducts = filterArray.filter(item => {
       if(count >= 10) {
         return false
       }
-      if(item.name.startsWith(searchText) || item.title.startsWith(searchText) || item.casNo.startsWith(searchText)) {
+      if(item.name.toLowerCase().startsWith(searchText) || item.title.toLowerCase().startsWith(searchText) || item.casNo.toLowerCase().startsWith(searchText)) {
         count++
         return true
       }

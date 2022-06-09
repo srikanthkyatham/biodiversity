@@ -12,12 +12,27 @@ const LatestProducts = () => {
   }
 
   return (
-    <div className="my-14" id="services">
+    <div className="my-14 text-center" id="services">
       <h2 className="text-3xl ml-5">Our Services</h2>
       <div className="w-10/12 m-auto shadow-lg shadow-blue-500/50 p-10">
         <Slider
           {...settings}
         >
+          <div>
+            <div className='flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
+              <div className="space-y-2">
+                <h2 className="font-semibold text-2xl">Our Mission</h2>
+                <p className="text-gray text-sm description-text text-xl">
+                &quot;Diversity Bio Sciences to be the most trusted global innovation center of innovative solutions for Pharma &amp; Biotech companies, In terms of Drug Development &amp; Custom synthesis”
+                </p>
+              </div>
+              <img
+                src="/services1.jpg"
+                alt="Synthetic Chemistry Services"
+                style={{ width: 250, height: 250 }}
+              />
+            </div>
+          </div>
           <div>
             <div className='flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
               <div className="space-y-2">

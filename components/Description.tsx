@@ -2,6 +2,7 @@
 const Description = () => {
   return (
     <div className="flex flex-col items-center px-5 px-10 py-5 space-y-10 my-10" id="aboutus">
+      <h2 className="text-3xl">About Us</h2>
       <h1 className="text-gray text-3xl description-text">
       Diversity Bio Sciences is a research 
       organization for Custom synthesis of 
@@ -25,12 +26,6 @@ const Description = () => {
         Diversity Bio Sciences has developed deep expertise in Custom Synthesis, Intermediates &amp; APl&apos;s development 
         and has continuously invested in its people resources and 
         infrastructure. 
-        </p>
-      </div>
-      <div className="text-center">
-        <h2 className="font-semibold text-2xl description-text">OUR MISSION</h2>
-        <p className="text-gray text-xl description-text">
-        &quot;Diversity Bio Sciences to be the most trusted global innovation center of innovative solutions for Pharma &amp; Biotech companies, In terms of Drug Development &amp; Custom synthesis”
         </p>
       </div>
       <div className="text-center">

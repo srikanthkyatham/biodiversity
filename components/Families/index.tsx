@@ -12,7 +12,7 @@ const Families = ({ families = [] }) => {
 
   const selectAlphabet = async (alphabet: string) => {
     setCurrentAlphabet(alphabet)
-    const response = await filterSimilarProducts(alphabet.toUpperCase(), families, true)
+    const response = await filterSimilarProducts(alphabet.toLowerCase(), families, true)
     setAvailableProducts(response)
   }
 
@@ -39,14 +39,15 @@ const Families = ({ families = [] }) => {
     }
   </div>
 
-  const renderFamilyProducts = () => <div className="flex flex-row px-5 overflow-hidden flex-wrap justify-center space-x-5">
+  const renderFamilyProducts = () => <div className="flex flex-row px-5 overflow-hidden flex-wrap justify-center md:justify-start mt-3">
   {
     availableProducts.map((item,index) => 
       (
         <button 
-          key={index.toString()} 
-          className='w-52 px-1 py-1 bg-slate-100 border border-indigo-600 rounded-sm text-black'
-          onClick={() => router.push(`/product/${item.title}`)}
+          key={index.toString()}
+          className='w-11/12 md:w-52 px-5 py-5 bg-slate-100 border border-slate-600 rounded-sm text-black mt-5 whitespace-pre overflow-hidden ml-5'
+          style={{ boxShadow: '0 1px 10px rgb(0 0 0 / 10%)' }}
+          onClick={() => router.push(`/product/${item.title}?family=true`)}
         >
           {item.title}
         </button>

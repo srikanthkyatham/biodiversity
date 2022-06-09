@@ -12,7 +12,9 @@ const MainImage = () => {
   }, [])
   
   return (
-    <div className='main-image' style={{ width: 'calc(99vw)', height: 'calc(100vh)', position: 'relative', backgroundImage: 'url(/MainImage.jpeg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }} id='demo' />
+    <div className='main-image' style={{ width: 'calc(99vw)', height: 'calc(100vh)', position: 'relative' }} id='demo'>
+      <p>here</p>
+    </div>
   );
 }
 

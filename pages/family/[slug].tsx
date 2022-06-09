@@ -30,7 +30,7 @@ export async function getStaticPaths() {
     `*[_type == "category" && defined(slug.current)][].slug.current`
   );
 
-  console.log({ paths });
+  // console.log({ paths });
   return {
     paths: paths.map((slug: any) => ({ params: { slug } })),
     fallback: false,

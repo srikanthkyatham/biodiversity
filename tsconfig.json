@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/Familiess/index.js"  ],
   "exclude": [
     "node_modules"
   ]
