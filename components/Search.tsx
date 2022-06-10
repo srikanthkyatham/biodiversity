@@ -66,7 +66,7 @@ const Search: React.FC = () => {
           <ul className="absolute bg-white pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none text-xl py-5 border border-stone-500 overflow-scroll" 
           style={{ maxWidth: 300, maxHeight: 500, zIndex: 10000 }}>
             {
-              availableProducts.map(item => <li className='px-1 py-2 border-b-2' onClick={() => router.push(`/product/${item.title}?family=false`)}>{item.title}</li> )
+              availableProducts.map(item => <li className='px-1 py-2 border-b-2' onClick={() => router.push(`/product/${item.title.toLowerCase().split(' ').join('-')}`)}>{item.title}</li> )
             }
           </ul>
         }

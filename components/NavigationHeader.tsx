@@ -35,7 +35,6 @@ const NavigationHeader = ({ listView = false, classStyle = '' }) => {
   if(listView) {
     return <ListView classStyle={classStyle} listView/>
   }
-  
 
   return (
     <nav className="bg-black">
