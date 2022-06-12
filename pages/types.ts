@@ -2,7 +2,9 @@ export interface ProductType {
   categories: Array<string>;
   name: string;
   title: string;
-  mainImage: string;
+  desktopImage: string;
+  iPadImage: string;
+  phoneImage: string;
   authorImage: string;
   divCatNo: string;
   casNo: string;
