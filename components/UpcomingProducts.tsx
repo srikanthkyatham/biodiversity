@@ -13,7 +13,7 @@ const LatestProducts = () => {
 
   return (
     <div className="my-14 text-center" id="services">
-      <h2 className="text-3xl ml-5">Our Services</h2>
+      <h2 className="sub-heading ml-5">Our Services</h2>
       <div className="w-10/12 m-auto shadow-lg shadow-blue-500/50 p-10">
         <Slider
           {...settings}
@@ -26,11 +26,14 @@ const LatestProducts = () => {
                 &quot;Diversity Bio Sciences to be the most trusted global innovation center of innovative solutions for Pharma &amp; Biotech companies, In terms of Drug Development &amp; Custom synthesis”
                 </p>
               </div>
-              <img
-                src="/services1.jpg"
-                alt="Synthetic Chemistry Services"
-                style={{ width: 250, height: 250 }}
-              />
+              <div style={{ width: 300, height: 300 }}>
+                <Image
+                  src="/services1.jpg"
+                  alt="Synthetic Chemistry Services"
+                  width={250}
+                  height={250}
+                />
+              </div>
             </div>
           </div>
           <div>
@@ -43,11 +46,12 @@ const LatestProducts = () => {
                 </p>
                 <p>Our multidisciplinary scientific team led by domain experts has helped our clients in successful & timely project submissions. </p>
               </div>
-              <img
+              <Image
                 src="/services1.jpg"
                 alt="Synthetic Chemistry Services"
-                style={{ width: 250, height: 250 }}
-              />
+                width={250}
+                height={250}
+                />
             </div>
           </div>
           <div>
@@ -59,10 +63,11 @@ const LatestProducts = () => {
                   needs. 
                 </p>
               </div>
-              <img
-                src="/services2.jpg"
-                alt="Custom Synthesis"
-                style={{ width: 250, height: 250 }}
+              <Image
+                src="/services1.jpg"
+                alt="Synthetic Chemistry Services"
+                width={250}
+                height={250}
               />
             </div>
           </div>
@@ -80,10 +85,11 @@ const LatestProducts = () => {
                   <li>Contract Research services- Synthesis of intermediates &amp; APl&apos;s </li>
                 </ul>
               </div>
-              <img
-                src="/services3.jpg"
-                alt="Our Services"
-                style={{ width: 250, height: 250 }}
+              <Image
+                src="/services1.jpg"
+                alt="Synthetic Chemistry Services"
+                width={250}
+                height={250}
               />
             </div>
           </div>

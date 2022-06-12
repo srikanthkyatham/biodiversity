@@ -20,8 +20,6 @@ const Families = ({ families = [] }) => {
     selectAlphabet('A')
   }, [])
 
-  console.log(currentAlphabet)
-
   const renderAlphabets = () => 
   <div className="flex flex-row px-5 overflow-hidden flex-wrap justify-center space-x-5">
     {
@@ -47,7 +45,7 @@ const Families = ({ families = [] }) => {
           key={index.toString()}
           className='w-11/12 md:w-52 px-5 py-5 bg-slate-100 border border-slate-600 rounded-sm text-black mt-5 whitespace-pre overflow-hidden ml-5'
           style={{ boxShadow: '0 1px 10px rgb(0 0 0 / 10%)' }}
-          onClick={() => router.push(`/product/${item.title}?family=true`)}
+          onClick={() => router.push(`/products_of_family?familyName=${item.title}`)}
         >
           {item.title}
         </button>

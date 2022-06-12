@@ -3,7 +3,7 @@ import Image from 'next/image'
 const Accreditation = () => {
   return (
     <div className='text-center'>
-      <h2 className='text-3xl text-red-500'>Accreditation</h2>
+      <h2 className='sub-heading'>Accreditation</h2>
       <div className='flex flex-col justify-center md:flex-row'>
         <Image
           src='/accreditation.jpg'

@@ -30,16 +30,13 @@ export async function getStaticPaths() {
     const paths = await client.fetch(
       `*[_type == "product" && defined(slug.current)][].slug.current`
     );
-  
-    console.log(paths);
-    return {
+      return {
       paths: paths.map((slug: any) => ({ params: { slug } })),
       fallback: false,
     };
   } catch(error) {
     console.log(error)
   }
-  
 }
 
 export async function getStaticProps(context: {
@@ -47,11 +44,8 @@ export async function getStaticProps(context: {
 }) {
   // It's important to default the slug so that it doesn't return "undefined"
   try {
-    console.log(context.params)
     const { slug = "" } = context.params;
-    console.log(slug)
     const product = await client.fetch(query, { slug });
-    console.log('product', product)
     return {
       props: {
         product,
@@ -69,8 +63,7 @@ export async function getStaticProps(context: {
         },
       },
     }
-  }
-  
+  } 
 }
 
 export default Product;

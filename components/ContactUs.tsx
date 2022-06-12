@@ -66,11 +66,9 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
     });
   };
 
-  console.log(formInputs)
-
   if(displayEnquiryForm) {
     return (
-      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-black" style={{ maxWidth: 500, background: 'white', zIndex: 10000 }} id="enquiry">
+      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-zinc-300 rounded" style={{ maxWidth: 500, background: 'white', zIndex: 10000 }} id="enquiry">
         <div className='flex justify-between px-3 py-3'>
           <h3 className="text-1xl">Enquiry Now</h3>
           <button className='text-xl' onClick={() => onConfirmation()}>X</button>
@@ -119,7 +117,7 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
 
   return (
     <div className="flex flex-col items-center my-10" id="contactus">
-      <h3 className="text-4xl">CONTACT US</h3>
+      <h3 className="sub-heading">CONTACT US</h3>
       <div className="flex max-w-3xl overflow-hidden justify-center flex-wrap">
         <input 
           type="text" 

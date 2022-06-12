@@ -1,5 +1,4 @@
 export const filterSimilarProducts = (searchText, filterArray, family = false) => {
-  console.log(searchText, filterArray)
   const products = [
     {
       name: '123',

@@ -1,26 +1,34 @@
 import groq from "groq";
 import client from "../client";
-import { ProductType } from "../types";
+import ProductsOfFamily from '../components/ProductsOfFamily'
+import { productsNameFilter } from '../utils/productsReducer'
 
-interface Props {
-  products: Array<ProductType>;
-}
-
-const ProductsOfFamily = ({ products }: Props): JSX.Element => {
-  //console.log({ products });
-  return <div />;
-};
-
-const query = groq`*[_type == "product" && families[]->title match "Dexamethasone"]{
-  title
+const product_query = groq`*[_type == "product" && slug.current == $slug][0]{
+  title,
+  mainImage,
+  divCatNo,
+  casNo,
+  molF,
+  molWt,
+  inventoryStatus,
+  productOverview,
+  technicalData,
+  reference,
+  "name": author->name,
+  "categories": categories[]->title,
+  "authorImage": author->image,
 }`;
 
-export async function getStaticProps(context: any) {
+const ProductsOfFamilyComponent = (props: any) => <ProductsOfFamily {...props} />
+
+export async function getServerSideProps(context: any) {
   // It's important to default the slug so that it doesn't return "undefined"
-  const products = await client.fetch(query);
-  //console.log({ products });
-  console.log("families");
-  console.dir(products);
+  const query = groq`*[_type == "product" && families[]->title match "${context.query.familyName.toString()}"]{
+    title
+  }`;
+  const familyProducts = await client.fetch(query);
+  const fetchAllProducts = familyProducts.map(async (item: any) => await client.fetch(product_query, { slug: productsNameFilter(item.title) }))
+  const products = await Promise.all(fetchAllProducts)
   return {
     props: {
       products,
@@ -28,4 +36,4 @@ export async function getStaticProps(context: any) {
   };
 }
 
-export default ProductsOfFamily;
+export default ProductsOfFamilyComponent;

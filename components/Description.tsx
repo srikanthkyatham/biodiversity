@@ -2,7 +2,7 @@
 const Description = () => {
   return (
     <div className="flex flex-col items-center px-5 px-10 py-5 space-y-10 my-10" id="aboutus">
-      <h2 className="text-3xl">About Us</h2>
+      <h2 className="sub-heading">About Us</h2>
       <h1 className="text-gray text-3xl description-text">
       Diversity Bio Sciences is a research 
       organization for Custom synthesis of 

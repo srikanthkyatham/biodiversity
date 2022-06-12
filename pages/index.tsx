@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import Description from '../components/Description'
-import Products from '../components/Families'
+import Footer from '../components/Footer'
+import HomePageProducts from '../components/HomePageProducts'
 import UpcomingProducts from '../components/UpcomingProducts'
 import ContactUs from '../components/ContactUs'
 import Accreditation from '../components/Accreditation'
@@ -17,10 +18,11 @@ export default function Home() {
       <main>
         <MainImage /> 
         <Description />
-        {/* <Products /> */}
+        <HomePageProducts />
         <UpcomingProducts />
         <ContactUs displayEnquiryForm={false} onConfirmation={() => console.log('')} />
         <Accreditation />
+        <Footer />
       </main>
     </div>
   );

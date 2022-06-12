@@ -24,7 +24,7 @@ const socialMediaLinks = [
 const Footer = () => {
   return (
     <div className="bg-black pt-5">
-      <div className="flex flex-col justify-around px-4 sm:px-6 text-gray-800 md:flex-row">
+      <div className="flex flex-col justify-around px-4 sm:px-6 text-gray-800 lg:flex-row">
         <div className="p-5">
           <h3 className="text-white">Corporate Office</h3>
           <p className="text-white">Diversity Bio Sciences Pvt. Ltd. 

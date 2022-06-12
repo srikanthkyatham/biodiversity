@@ -20,7 +20,6 @@ function MyApp({ Component, pageProps }: Props) {
       <a onClick={() => whatsappChat()} className="float" target="_blank" rel="noreferrer">
         <i className="fa fa-whatsapp my-float"></i>
       </a>
-      <Footer />
       <EnquiryForm />
     </Layout>
   );

@@ -3,6 +3,7 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import Image from "next/image"
 import dynamic from "next/dynamic"
 import client from "../../client";
+import Config from '../../app.json'
 
 interface ProductType {
   categories: Array<string>;
@@ -40,8 +41,6 @@ function urlFor(source: SanityImageSource) {
 
 const Product = ({ product }: ProductProps) => {
 
-  console.log(product)
-
   const options = {
     chunkWidth: 260,
     chunkHeight: 200,
@@ -53,9 +52,9 @@ const Product = ({ product }: ProductProps) => {
   }
 
   return (
-    <div className='w-80 border border-slate-600 rounded-sm'>
+    <div className='w-80 mt-5 border border-slate-600 rounded-sm mr-5' style={{ minWidth: 300 }}>
       <p className="w-full text-white brand-bg-red-color text-center px-1 py-1">{product.title}</p>
-      <ReactWaterMark waterMarkText="BioDiversity" options={options}>
+      <ReactWaterMark waterMarkText={Config.watermark_text} options={options}>
         <Image
           src={product.mainImage ? urlFor(product.mainImage).width(50).url() : '/services1.jpg'}
           alt={product.title}
