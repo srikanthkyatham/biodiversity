@@ -6,7 +6,7 @@ export interface ProductType {
   iPadImage: string;
   phoneImage: string;
   authorImage: string;
-  divCatNo: string;
+  divCATNo: string;
   casNo: string;
   molF: string;
   molWt: string;

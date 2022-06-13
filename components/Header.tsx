@@ -6,14 +6,14 @@ import Search from './Search'
 const Header = () => {
 
   return (
-    <div className="flex justify-between flex-col space-y-5 lg:flex-row lg:items-center px-5 py-5" id="header">
+    <header className="flex justify-between flex-col space-y-5 lg:flex-row lg:items-center px-5 py-5" id="header">
       <img className='w-56 md:w-96' src="/logo.png" alt='Bio Diversity' />
       <Search />
       <div className="flex flex-col lg:items-end space-y-1">
         <MobileDetails />
         <EmailDetails />
       </div>
-    </div>
+    </header>
   );
 }
 

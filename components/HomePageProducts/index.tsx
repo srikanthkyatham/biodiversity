@@ -14,21 +14,30 @@ const HomePageProducts = () => {
       headers: {
         "Content-Type": "application/json"
       }
-    }).then(response => response.json()).then(products => setProducts(products)).catch(error => setProducts([]))
+    }).then(response => {
+      if(response.status === 200) {
+        return response.json()
+      }
+      return []
+    }).then(products => setProducts(products)).catch(error => console.log(error))
   }
 
   useEffect(() => {
     setTimeout(() => filterProducts(),1000)
   }, [])
   return (
-    <div className="px-5 py-9 overflow-scroll products-bg-color products" id="products">
-      <h2 className='sub-heading text-center'>Products</h2>
-      <div className='flex md:justify-center'>
-        {
-          products.map((item,index) => <Product key={index.toString()} product={item} />)
-        }
+    <>  
+      {products && (
+        <div className="px-5 py-9 overflow-scroll products-bg-color products" id="products">
+        <h2 className='sub-heading text-center'>Products</h2>
+        <div className='flex md:justify-center'>
+          {
+            products.map((item,index) => <Product key={index.toString()} product={item} />)
+          }
+        </div>
       </div>
-    </div>
+      )}
+    </>
   );
 }
 

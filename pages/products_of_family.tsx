@@ -6,7 +6,7 @@ import { productsNameFilter } from '../utils/productsReducer'
 const product_query = groq`*[_type == "product" && slug.current == $slug][0]{
   title,
   mainImage,
-  divCatNo,
+  divCATNo,
   casNo,
   molF,
   molWt,
@@ -17,6 +17,9 @@ const product_query = groq`*[_type == "product" && slug.current == $slug][0]{
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
+  desktopImage,
+  phoneImage,
+  iPadImage
 }`;
 
 const ProductsOfFamilyComponent = (props: any) => <ProductsOfFamily {...props} />

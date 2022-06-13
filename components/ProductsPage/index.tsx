@@ -43,7 +43,7 @@ const ProductsPage = ({ product }: ProductsPageProps) => {
       <div className='flex flex-col justify-center mt-5 md:flex-row'>
       <ReactWaterMark waterMarkText={Config.watermark_text} options={options}>
         <Image
-          src={product.mainImage ? urlFor(product.mainImage).width(50).url() : '/services1.jpg'}
+          src={product.desktopImage ? urlFor(product.desktopImage).width(50).url() : '/services1.jpg'}
           alt={product.title}
           width={297}
           height={126}
@@ -57,10 +57,10 @@ const ProductsPage = ({ product }: ProductsPageProps) => {
                   <tbody>
                     <tr className="border-b">
                       <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        CAT No:
+                        Div CAT No:
                       </td>
                       <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        {product.divCatNo}
+                        {product.divCATNo}
                       </td>
                     </tr>
                     <tr className="bg-white border-b">

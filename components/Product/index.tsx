@@ -4,22 +4,7 @@ import Image from "next/image"
 import dynamic from "next/dynamic"
 import client from "../../client";
 import Config from '../../app.json'
-
-interface ProductType {
-  categories: Array<string>;
-  name: string;
-  title: string;
-  mainImage: string;
-  authorImage: string;
-  divCatNo: string;
-  casNo: string;
-  molF: string;
-  molWt: string;
-  inventoryStatus: string;
-  productOverview: string;
-  technicalData: string;
-  reference: string;
-}
+import { ProductType } from '../../types'
 
 interface ProductProps {
   product: ProductType;
@@ -56,7 +41,7 @@ const Product = ({ product }: ProductProps) => {
       <p className="w-full text-white brand-bg-red-color text-center px-1 py-1">{product.title}</p>
       <ReactWaterMark waterMarkText={Config.watermark_text} options={options}>
         <Image
-          src={product.mainImage ? urlFor(product.mainImage).width(50).url() : '/services1.jpg'}
+          src={product.phoneImage ? urlFor(product.phoneImage).width(50).url() : '/services1.jpg'}
           alt={product.title}
           width={297}
           height={126}
@@ -64,8 +49,8 @@ const Product = ({ product }: ProductProps) => {
       </ReactWaterMark>
       <ul className="list-none px-5 py-5">
         <li className="flex">
-          <p className="w-20">CAT No:</p>
-          <p>{product.divCatNo}</p>
+          <p className="w-20">Div CAT No:</p>
+          <p>{product.divCATNo}</p>
         </li>
         <li className="flex">
           <p className="w-20">CAS No:</p>

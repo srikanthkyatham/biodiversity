@@ -37,7 +37,7 @@ const Families = ({ families = [] }) => {
     }
   </div>
 
-  const renderFamilyProducts = () => <div className="flex flex-row px-5 overflow-hidden flex-wrap justify-center md:justify-start mt-3">
+  const renderFamilyProducts = () => <div className="flex flex-row px-5 overflow-hidden flex-wrap justify-center mt-3">
   {
     availableProducts.map((item,index) => 
       (

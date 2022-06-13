@@ -16,25 +16,29 @@ const socialMediaLinks = [
     link: 'https://twitter.com/diversityDBS'
   },
   {
-    name: 'fa-brands fa-linkedin',
+    name: 'fa fa-brands fa-linkedin',
     link: 'https://www.linkedin.com/company/80783383/admin/'
   }
 ]
 
 const Footer = () => {
   return (
-    <div className="bg-black pt-5">
+    <footer className="bg-black pt-5">
       <div className="flex flex-col justify-around px-4 sm:px-6 text-gray-800 lg:flex-row">
-        <div className="p-5">
-          <h3 className="text-white">Corporate Office</h3>
-          <p className="text-white">Diversity Bio Sciences Pvt. Ltd. 
-            <br></br>
+        <div className="p-5 space-y-1">
+          <h3 className="text-white font-bold mb-2">Corporate Office</h3>
+          <p className="text-white font-medium">Diversity Bio Sciences Pvt. Ltd.
+          </p>
+          <p className="text-white font-medium">Diversity Bio Sciences Pvt. Ltd. 
             Plot No 75 / A. IDA Mallapur, 
-            <br></br>
-            Hyderabad 500076 
-            <br></br>
-            <MobileDetails /> 
-            <br></br>
+          </p>
+          <p className="text-white font-medium">
+            Hyderabad 500076
+          </p>
+          <p className="text-white font-medium">
+            <MobileDetails />
+          </p>
+          <p className="text-white font-medium">
             <EmailDetails />
           </p>
         </div>
@@ -48,17 +52,19 @@ const Footer = () => {
             </div>
           </div>
           <div className="p-5">
-            <div className="text-sm uppercase text-white font-bold">Site Map</div>
+            <div className="uppercase text-white font-bold text-1xl">Site Map</div>
             <NavigationHeader listView={true} classStyle='flex flex-col' />
           </div>
           <div className="p-5">
-            <div className="text-sm uppercase text-white font-bold">Social Media</div>
+            <div className="text-sm uppercase text-white font-bold mb-2">Social Media</div>
             {
-              socialMediaLinks.map((item,index) => <a key={index.toString()} href={item.link}><i className={item.name} style={{ color: 'white', marginRight: 10 }}></i></a>)
+              socialMediaLinks.map((item,index) => <a key={index.toString()} href={item.link}>
+                <i className={item.name} style={{ color: 'white', fontSize: 25, marginRight: 20 }}></i></a>
+              )
             }
           </div>
         </div>
-    </div>
+    </footer>
   );
 }
 

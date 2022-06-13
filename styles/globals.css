@@ -68,11 +68,16 @@
 }
 
 .sub-heading {
-  font-size: 24px;
+  font-size: 34px;
   color: #b12e2a;
 }
 
 @media only screen and (max-width: 800px) {
+
+  .sub-heading {
+    font-size: 30px;
+  }
+
   .main-image {
     background-image: url(/MainImageMobile.jpg);
     height: 300px !important;

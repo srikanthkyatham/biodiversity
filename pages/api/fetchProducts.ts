@@ -7,7 +7,7 @@ import { productsNameFilter } from '../../utils/productsReducer'
 const query = groq`*[_type == "product" && slug.current == $slug][0]{
   title,
   mainImage,
-  divCatNo,
+  divCATNo,
   casNo,
   molF,
   molWt,
@@ -18,6 +18,8 @@ const query = groq`*[_type == "product" && slug.current == $slug][0]{
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
+  phoneImage,
+  iPadImage
 }`;
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -27,6 +29,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const products = await Promise.all(fetchAllProducts)
     res.json(products)
   } catch (error) {
-    res.status(500).json({ error: 'Error fetchingProducts email' })
+    res.status(500).json({ error: 'Error fetchingProducts' })
   }
 }

@@ -21,61 +21,24 @@ const LatestProducts = () => {
           <div>
             <div className='flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
               <div className="space-y-2">
-                <h2 className="font-semibold text-2xl">Our Mission</h2>
-                <p className="text-gray text-sm description-text text-xl">
+                <h2 className="font-semibold text-2xl text-left">Our Mission</h2>
+                <p className="text-black block py-2 rounded-md text-1xl font-normal text-justify md:text-2xl text-left">
                 &quot;Diversity Bio Sciences to be the most trusted global innovation center of innovative solutions for Pharma &amp; Biotech companies, In terms of Drug Development &amp; Custom synthesis”
                 </p>
               </div>
-              <div style={{ width: 300, height: 300 }}>
-                <Image
-                  src="/services1.jpg"
-                  alt="Synthetic Chemistry Services"
-                  width={250}
-                  height={250}
-                />
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className='flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
-              <div className="space-y-2">
-                <h2 className="font-semibold text-2xl">SYNTHETIC CHEMICAL SERVICES</h2>
-                <p className="text-gray text-sm description-text text-xl">
-                  Experienced chemistry teams work on diversified synthetic routes. Knowledge, experience and chemical  synthesis labs, help to carry out complex custom synthesis and collaborative medicinal chemistry program needs for customers. Quality and timely chemical  sourcing occelerate our programs a step further. The synthetic team is skilled to undertake challenges in synthetic organic chemistry, involving various types of chemistry to deliver compounds to customer requirements. 
-                  {'\n'}
-                </p>
-                <p>Our multidisciplinary scientific team led by domain experts has helped our clients in successful & timely project submissions. </p>
-              </div>
               <Image
                 src="/services1.jpg"
                 alt="Synthetic Chemistry Services"
-                width={250}
-                height={250}
-                />
-            </div>
-          </div>
-          <div>
-            <div className='flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
-              <div className="space-y-2">
-                <h2 className="font-semibold text-2xl">CUSTOM SYNTHESIS</h2>
-                <p className="text-gray text-sm description-text text-xl">
-                  Diversity Bio Sciences specialize in offering flexible and cost-effective solutions to its clients globally to meet their  custom organic synthesis requirements. With deep knowledge, experience and infrastructure, our team has extensive analytical and synthetic chemical capabilities in providing a competitive edge to your custom synthesis 
-                  needs. 
-                </p>
-              </div>
-              <Image
-                src="/services1.jpg"
-                alt="Synthetic Chemistry Services"
-                width={250}
-                height={250}
+                width={300}
+                height={300}
               />
             </div>
           </div>
           <div>
             <div className='flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
               <div className="space-y-2">
-                <h2 className="font-semibold text-2xl">OUR SERVICES</h2>
-                <ul className="list-disc space-y-3 text-xl">
+                <h2 className="font-semibold text-2xl text-left">Our Strength</h2>
+                <ul className="list-disc space-y-3 text-xl text-left">
                   <li>Custom synthesis of complex organic molecules</li>
                   <li>Pharmaceutical Reference standards</li>
                   <li>Stable isotope label products</li>
@@ -88,8 +51,42 @@ const LatestProducts = () => {
               <Image
                 src="/services1.jpg"
                 alt="Synthetic Chemistry Services"
-                width={250}
-                height={250}
+                width={300}
+                height={300}
+              />
+            </div>
+          </div>
+          <div>
+            <div className='flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
+              <div className="space-y-2">
+                <h2 className="font-semibold text-2xl text-left">SYNTHETIC CHEMICAL SERVICES</h2>
+                <p className="text-black block py-2 rounded-md text-1xl font-normal text-justify md:text-2xl text-left">
+                  Experienced chemistry teams work on diversified synthetic routes. Knowledge, experience and chemical  synthesis labs, help to carry out complex custom synthesis and collaborative medicinal chemistry program needs for customers. Quality and timely chemical  sourcing occelerate our programs a step further. The synthetic team is skilled to undertake challenges in synthetic organic chemistry, involving various types of chemistry to deliver compounds to customer requirements. 
+                  {'\n'}
+                </p>
+              </div>
+              <Image
+                src="/services1.jpg"
+                alt="Synthetic Chemistry Services"
+                width={300}
+                height={300}
+                />
+            </div>
+          </div>
+          <div>
+            <div className='flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
+              <div className="space-y-2">
+                <h2 className="font-semibold text-2xl text-left">CUSTOM SYNTHESIS</h2>
+                <p className="text-black block py-2 rounded-md text-1xl font-normal text-justify md:text-2xl text-left">
+                  Diversity Bio Sciences specialize in offering flexible and cost-effective solutions to its clients globally to meet their  custom organic synthesis requirements. With deep knowledge, experience and infrastructure, our team has extensive analytical and synthetic chemical capabilities in providing a competitive edge to your custom synthesis 
+                  needs. 
+                </p>
+              </div>
+              <Image
+                src="/services1.jpg"
+                alt="Synthetic Chemistry Services"
+                width={300}
+                height={300}
               />
             </div>
           </div>

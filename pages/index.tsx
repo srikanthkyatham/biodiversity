@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div>
       <main>
-        <MainImage /> 
+        <MainImage />
         <Description />
         <HomePageProducts />
         <UpcomingProducts />

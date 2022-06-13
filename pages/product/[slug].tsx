@@ -8,7 +8,7 @@ const Product = (props: any) => <ProductsPage {...props} />
 const query = groq`*[_type == "product" && slug.current == $slug][0]{
   title,
   mainImage,
-  divCatNo,
+  divCATNo,
   casNo,
   molF,
   molWt,
