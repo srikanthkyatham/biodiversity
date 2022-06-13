@@ -41,14 +41,14 @@ const ProductsPage = ({ product }: ProductsPageProps) => {
     <div className='w-5/6 m-auto md:w-11/12 mt-5'>
       <h2 className='text-center text-red-500 text-3xl'>{product.title}</h2>
       <div className='flex flex-col justify-center mt-5 md:flex-row'>
-      <ReactWaterMark waterMarkText={Config.watermark_text} options={options}>
-        <Image
-          src={product.desktopImage ? urlFor(product.desktopImage).width(50).url() : '/services1.jpg'}
-          alt={product.title}
-          width={297}
-          height={126}
-        />
-      </ReactWaterMark>
+        <ReactWaterMark waterMarkText={Config.watermark_text} options={options}>
+          <Image
+            src={product.desktopImage ? urlFor(product.desktopImage).width(50).url() : '/services1.jpg'}
+            alt={product.title}
+            width={297}
+            height={126}
+          />
+        </ReactWaterMark>
         <div className="flex flex-col md:ml-5">
           <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">

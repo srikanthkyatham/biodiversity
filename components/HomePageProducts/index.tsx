@@ -10,7 +10,7 @@ const HomePageProducts = () => {
     const response = await fetchProducts()
     fetch('/api/fetchProducts', {
       method: 'POST',
-      body: JSON.stringify(response),
+      body: JSON.stringify(response.slice(0,10)),
       headers: {
         "Content-Type": "application/json"
       }
@@ -28,9 +28,9 @@ const HomePageProducts = () => {
   return (
     <>  
       {products && (
-        <div className="px-5 py-9 overflow-scroll products-bg-color products" id="products">
+        <div className="px-5 py-9 products-bg-color products flex flex-col justify-center align-center" id="products">
         <h2 className='sub-heading text-center'>Products</h2>
-        <div className='flex md:justify-center'>
+        <div className='flex md:justify-center no-scrollbar' style={{ width: 'calc(80vw)', overflow: 'scroll' }}>
           {
             products.map((item,index) => <Product key={index.toString()} product={item} />)
           }
