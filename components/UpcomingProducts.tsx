@@ -38,7 +38,7 @@ const LatestProducts = () => {
             <div className='flex flex-col items-center px-5 py-10 justify-between md:flex-row'>
               <div className="space-y-2">
                 <h2 className="font-semibold text-2xl text-left">Our Strength</h2>
-                <ul className="list-disc space-y-3 text-xl text-left">
+                <ul className="list-disc space-y-3 text-1xl font-normal text-left md:text-2xl">
                   <li>Custom synthesis of complex organic molecules</li>
                   <li>Pharmaceutical Reference standards</li>
                   <li>Stable isotope label products</li>

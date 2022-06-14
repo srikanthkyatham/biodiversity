@@ -38,7 +38,6 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
   const sendMail = async () => {
 
     try {
-      const products = await fetch('/api/products')
       setLoading(true)
       await fetch("/api/sendGridMail", {
         "method": "POST",
@@ -57,9 +56,18 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
 
   }
 
+  function isNumeric(str: number) {
+    if (typeof str != "string") return false  
+    return !isNaN(str) && !isNaN(parseFloat(str))
+  }
+
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
-
+    console.log(name, value, isNumeric(value), Number.isNaN(value), parseInt(value))
+    if(name === 'phone' && value.length > 1 && !isNumeric(value)) {
+      console.log('here')
+      return
+    }
     setFormInputs({
       ...formInputs,
       [name]: value,
@@ -88,11 +96,12 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
             placeholder="Email" 
             className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
             bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
-            name='Your Email' 
+            name='email' 
             value={formInputs.email}
             onChange={handleInputChange} />
           <input 
-            type="text" 
+            type="tel"
+            maxLength={10}
             placeholder="Your Phone" 
             className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
             bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
@@ -104,7 +113,7 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
             placeholder="Message" 
             className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
             bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
-            name='Message' 
+            name='others' 
             value={formInputs.others}
             onChange={handleInputChange} />
           <button className="px-3 h-11 w-56 mx-5 my-5 text-white brand-bg-red-color rounded-xl description-text" onClick={sendMail}>
@@ -144,7 +153,8 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
           value={formInputs.products}
           onChange={handleInputChange} />
         <input 
-          type="text" 
+          type="tel"
+          maxLength={10}
           placeholder="Phone" 
           className="max-w-sm mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
           bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"

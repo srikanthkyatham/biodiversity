@@ -26,17 +26,27 @@ const ProductsOfFamilyComponent = (props: any) => <ProductsOfFamily {...props} /
 
 export async function getServerSideProps(context: any) {
   // It's important to default the slug so that it doesn't return "undefined"
-  const query = groq`*[_type == "product" && families[]->title match "${context.query.familyName.toString()}"]{
-    title
-  }`;
-  const familyProducts = await client.fetch(query);
-  const fetchAllProducts = familyProducts.map(async (item: any) => await client.fetch(product_query, { slug: productsNameFilter(item.title) }))
-  const products = await Promise.all(fetchAllProducts)
-  return {
-    props: {
-      products,
-    },
-  };
+  try {
+    const query = groq`*[_type == "product" && families[]->title match "${context.query.familyName.toString()}"]{
+      title
+    }`;
+    const familyProducts = await client.fetch(query);
+    const fetchAllProducts = familyProducts.map(async (item: any) => await client.fetch(product_query, { slug: productsNameFilter(item.title) }))
+    const products = await Promise.all(fetchAllProducts)
+    return {
+      props: {
+        products,
+      },
+    };
+  } catch (error) {
+    console.log(error)
+    return {
+      props: {
+        products: []
+      }
+    }
+  }
+  
 }
 
 export default ProductsOfFamilyComponent;

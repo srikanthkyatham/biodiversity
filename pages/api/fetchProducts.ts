@@ -25,10 +25,12 @@ const query = groq`*[_type == "product" && slug.current == $slug][0]{
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
+    console.log(req.body)
     const fetchAllProducts = req.body.map(async (item: any) => await client.fetch(query, { slug: productsNameFilter(item.title) }));
     const products = await Promise.all(fetchAllProducts)
     res.json(products)
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: 'Error fetchingProducts' })
   }
 }
