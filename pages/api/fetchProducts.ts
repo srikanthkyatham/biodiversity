@@ -18,6 +18,7 @@ const query = groq`*[_type == "product" && slug.current == $slug][0]{
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
+  desktopImage,
   phoneImage,
   iPadImage
 }`;
@@ -31,6 +32,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.json(products)
   } catch (error) {
     console.log(error)
-    res.status(500).json({ error: 'Error fetchingProducts' })
+    res.status(500).json({ error, errorText: 'Fetch Products Failed' })
   }
 }

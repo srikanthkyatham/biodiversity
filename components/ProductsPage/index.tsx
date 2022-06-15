@@ -1,28 +1,15 @@
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import Image from "next/image"
 import dynamic from "next/dynamic"
 import client from "../../client";
 import { ProductType } from "../../types";
-import { Watermark } from '@hirohe/react-watermark';
-import Config from '../../app.json'
 
-interface ProductsPageProps {
-  product: ProductType;
-}
-
-interface ReactWaterMarkProps {
-  waterMarkText: string;
-  options: object;
-}
-
-const ReactWaterMark = dynamic<ReactWaterMarkProps>
-  (import('react-watermark-component'),
+const WatermarkComponent = dynamic
+  (import('../Watermark'),
   { ssr: false }
 )
-
-function urlFor(source: SanityImageSource) {
-  return imageUrlBuilder(client).image(source);
+interface ProductsPageProps {
+  product: ProductType;
 }
 
 const ProductsPage = ({ product }: ProductsPageProps) => {
@@ -41,14 +28,7 @@ const ProductsPage = ({ product }: ProductsPageProps) => {
     <div className='w-5/6 m-auto md:w-11/12 mt-5'>
       <h2 className='text-center text-red-500 text-3xl'>{product.title}</h2>
       <div className='flex flex-col justify-center mt-5 md:flex-row'>
-        <ReactWaterMark waterMarkText={Config.watermark_text} options={options}>
-          <Image
-            src={product.desktopImage ? urlFor(product.desktopImage).width(50).url() : '/services1.jpg'}
-            alt={product.title}
-            width={297}
-            height={126}
-          />
-        </ReactWaterMark>
+        <WatermarkComponent product={product} />
         <div className="flex flex-col md:ml-5">
           <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">

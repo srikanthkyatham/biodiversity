@@ -1,52 +1,21 @@
-import imageUrlBuilder from "@sanity/image-url";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import Image from "next/image"
 import dynamic from "next/dynamic"
-import client from "../../client";
-import Config from '../../app.json'
 import { ProductType } from '../../types'
+
+const WatermarkComponent = dynamic
+  (import('../Watermark'),
+  { ssr: false }
+)
 
 interface ProductProps {
   product: ProductType;
 }
 
-interface ReactWaterMarkProps {
-  waterMarkText: string;
-  options: object;
-}
-
-const ReactWaterMark = dynamic<ReactWaterMarkProps>
-  (import('react-watermark-component'),
-  { ssr: false }
-)
-
-function urlFor(source: SanityImageSource) {
-  return imageUrlBuilder(client).image(source);
-}
-
 const Product = ({ product }: ProductProps) => {
-
-  const options = {
-    chunkWidth: 260,
-    chunkHeight: 200,
-    textAlign: 'left',
-    textBaseline: 'bottom',
-    globalAlpha: 1,
-    font: "24px Microsoft Yahei",
-    fillStyle: "#f00"
-  }
 
   return (
     <div className='w-80 mt-5 border border-slate-600 rounded-sm mr-5' style={{ minWidth: 300 }}>
       <p className="w-full text-white brand-bg-red-color text-center px-1 py-1">{product.title}</p>
-      <ReactWaterMark waterMarkText={Config.watermark_text} options={options}>
-        <Image
-          src={product.phoneImage ? urlFor(product.phoneImage).width(50).url() : '/services1.jpg'}
-          alt={product.title}
-          width={297}
-          height={126}
-        />
-      </ReactWaterMark>
+      <WatermarkComponent product={product} />
       <ul className="list-none px-5 py-5">
         <li className="flex">
           <p className="w-20">Div CAT No:</p>

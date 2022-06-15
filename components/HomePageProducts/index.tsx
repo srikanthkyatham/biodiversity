@@ -30,7 +30,7 @@ const HomePageProducts = () => {
       {products && (
         <div className="px-5 py-9 products-bg-color products flex flex-col justify-center align-center" id="products">
         <h2 className='sub-heading text-center'>Products</h2>
-        <div className='flex md:justify-center no-scrollbar' style={{ width: 'calc(80vw)', overflow: 'scroll' }}>
+        <div className='flex md:justify-center no-scrollbar' style={{ width: 'calc(80vw)', overflow: 'scroll', marginLeft: 'auto', marginRight: 'auto' }}>
           {
             products.map((item,index) => <Product key={index.toString()} product={item} />)
           }
