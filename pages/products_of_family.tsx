@@ -1,7 +1,7 @@
 import groq from "groq";
 import client from "../client";
-import ProductsOfFamily from '../components/ProductsOfFamily'
-import { productsNameFilter } from '../utils/productsReducer'
+import ProductsOfFamily from "../components/ProductsOfFamily";
+import { productsNameFilter } from "../utils/productsReducer";
 
 const product_query = groq`*[_type == "product" && slug.current == $slug][0]{
   title,
@@ -22,7 +22,9 @@ const product_query = groq`*[_type == "product" && slug.current == $slug][0]{
   iPadImage
 }`;
 
-const ProductsOfFamilyComponent = (props: any) => <ProductsOfFamily {...props} />
+const ProductsOfFamilyComponent = (props: any) => (
+  <ProductsOfFamily {...props} />
+);
 
 export async function getServerSideProps(context: any) {
   // It's important to default the slug so that it doesn't return "undefined"
@@ -31,23 +33,33 @@ export async function getServerSideProps(context: any) {
       title
     }`;
     const familyProducts = await client.fetch(query);
-    const fetchAllProducts = familyProducts.map(async (item: any) => await client.fetch(product_query, { slug: productsNameFilter(item.title) }))
-    const products = await Promise.all(fetchAllProducts)
+    console.log({
+      familyName: context?.query?.familyName,
+      query,
+      familyProducts,
+    });
+
+    const fetchAllProducts = familyProducts.map(
+      async (item: any) =>
+        await client.fetch(product_query, {
+          slug: productsNameFilter(item.title),
+        })
+    );
+    const products = await Promise.all(fetchAllProducts);
     return {
       props: {
         products,
       },
     };
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return {
       props: {
         products: [],
-        error
-      }
-    }
+        error,
+      },
+    };
   }
-  
 }
 
 export default ProductsOfFamilyComponent;
