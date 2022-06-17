@@ -77,7 +77,7 @@ const ProductsPage = ({ product }: ProductsPageProps) => {
                     </tr>
                     <tr className="bg-white border-b">
                       <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        Product Overview
+                        Chemical Formula
                       </td>
                       <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                         {product.productOverview}

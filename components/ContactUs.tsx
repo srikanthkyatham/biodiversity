@@ -127,11 +127,11 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
   return (
     <div className="flex flex-col items-center my-10" id="contactus">
       <h3 className="sub-heading">CONTACT US</h3>
-      <div className="flex max-w-3xl overflow-hidden justify-center flex-wrap">
+      <div className="flex max-w-3xl overflow-hidden justify-center flex-wrap contact-us-container">
         <input 
           type="text" 
           placeholder="Name" 
-          className="max-w-sm mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
+          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
           bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
           name='name' 
           value={formInputs.name}
@@ -139,7 +139,7 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
         <input 
           type="text" 
           placeholder="Email" 
-          className="max-w-sm mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
+          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
           bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
           name='email' 
           value={formInputs.email}
@@ -147,7 +147,7 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
         <input 
           type="text" 
           placeholder="Products" 
-          className="max-w-sm mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white
+          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white
           bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
           name='products' 
           value={formInputs.products}
@@ -156,7 +156,7 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
           type="tel"
           maxLength={10}
           placeholder="Phone" 
-          className="max-w-sm mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
+          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
           bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
           name='phone' 
           value={formInputs.phone}
@@ -164,7 +164,7 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
         <input 
           type="text" 
           placeholder="others" 
-          className="max-w-sm mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
+          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
           bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
           name='others' 
           value={formInputs.others}

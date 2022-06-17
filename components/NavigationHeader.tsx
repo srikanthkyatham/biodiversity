@@ -21,7 +21,7 @@ const ListView = (props: IMyProps) =>
         key={item.name}
         href={item.href}
         className={!props.listView ? "focus:bg-red-500 text-white block px-3 py-2 rounded-md text-base font-medium" : 
-        "text-white block 9py-2 rounded-md text-base font-medium"}
+        "text-white block py-2 rounded-md text-base font-medium navigation-list-view"}
         >
         {item.name}
       </a>
@@ -43,7 +43,7 @@ const NavigationHeader = ({ listView = false, classStyle = '' }) => {
         <div className="flex md:justify-center md:items-center h-16">
           <div className="flex items-center">
             <div className="hidden md:block">
-              <ListView classStyle='ml-10 flex items-baseline space-x-4' listView/>
+              <ListView classStyle='ml-10 flex items-baseline' listView/>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">

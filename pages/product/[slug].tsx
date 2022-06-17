@@ -19,6 +19,9 @@ const query = groq`*[_type == "product" && slug.current == $slug][0]{
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
+  desktopImage,
+  phoneImage,
+  iPadImage
 }`;
 
 // http://localhost:3000/product/product1

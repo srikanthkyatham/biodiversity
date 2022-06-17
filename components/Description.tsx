@@ -1,3 +1,4 @@
+import Image from 'next/image'
 
 const Description = () => {
   return (
@@ -16,18 +17,26 @@ const Description = () => {
         and has continuously invested in its people resources and 
         infrastructure. 
       </h1>
-      <div className="text-center">
-        <h2 className="sub-heading">Why to choose Diversity....? </h2>
-        <ul className="list-disc space-y-3 text-left text-black block px-10 py-2 rounded-md text-1xl font-normal md:text-2xl">
-          <li>Capable to synthesize complex molecules from milligrams to multi grams.</li>
-          <li>Expertise in synthesis of Drug Impurities, Small molecules & scaffold.</li>
-          <li>We supply Impurities / Metabolites</li>
-          <li>Services with efficient and excellent quality (On Time in Full)</li>
-          <li>Well trained and skilled scientists with diversified experience</li>
-          <li>Synthesis of intermediates to support on-going medicinal chemistry programs</li>
-          <li>Final product / intermediates with well-characterized.</li>
-          <li>Flexible business models, Best in the industry. </li>
-        </ul>
+      <div className="text-center flex flex-col md:flex-row">
+        <div>
+          <h2 className="sub-heading">Why to choose Diversity....? </h2>
+          <ul className="list-disc space-y-3 text-left text-black block px-10 py-2 rounded-md text-1xl font-normal md:text-2xl">
+            <li>Capable to synthesize complex molecules from milligrams to multi grams.</li>
+            <li>Expertise in synthesis of Drug Impurities, Small molecules & scaffold.</li>
+            <li>We supply Impurities / Metabolites</li>
+            <li>Services with efficient and excellent quality (On Time in Full)</li>
+            <li>Well trained and skilled scientists with diversified experience</li>
+            <li>Synthesis of intermediates to support on-going medicinal chemistry programs</li>
+            <li>Final product / intermediates with well-characterized.</li>
+            <li>Flexible business models, Best in the industry. </li>
+          </ul>
+        </div>
+        <Image 
+          src='/services1.jpg'
+          alt='Why to choose diversity'
+          width={300}
+          height={300}
+        />
       </div>
     </div>
   );

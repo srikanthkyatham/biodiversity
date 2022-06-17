@@ -1,33 +1,33 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
 
 const Accreditation = () => {
   return (
-    <div className='text-center'>
+    <div className='text-center mb-3'>
       <h2 className='sub-heading'>Accreditation</h2>
-      <div className='flex flex-col justify-center md:flex-row'>
-        <Image
-          src='/accreditation.jpg'
+      <div className='flex flex-col justify-center md:flex-row space-x-4'>
+        <img className='accreditation-image'
+          src='/acrreditation1.jpg'
           alt='accreditation'
-          width={200}
-          height={200}
+          width={150}
+          height={150}
         />
-        <Image
-          src='/accreditation.jpg'
+        <img className='accreditation-image'
+          src='/accreditation2.jpg'
           alt='accreditation'
-          width={200}
-          height={200}
+          width={150}
+          height={150}
         />
-        <Image
-          src='/accreditation.jpg'
+        <img className='accreditation-image'
+          src='/accreditation3.jpg'
           alt='accreditation'
-          width={200}
-          height={200}
+          width={150}
+          height={150}
         />
-        <Image
-          src='/accreditation.jpg'
+        <img className='accreditation-image'
+          src='/accreditation4.jpg'
           alt='accreditation'
-          width={200}
-          height={200}
+          width={150}
+          height={150}
         />
       </div>
     </div>

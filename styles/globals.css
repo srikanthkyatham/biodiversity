@@ -80,10 +80,38 @@
   background-image: url(/MainImage.jpg);
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: 80% 80%;
 }
 
 .sub-heading {
   font-size: 34px;
+  color: #b12e2a;
+}
+
+.navigation-list-view {
+  margin-right: 50px;
+}
+
+.accreditation-image{
+  width: 150px;
+  height: 150px;
+  margin-right: 20px !important;
+}
+
+.brand-logo-image{
+  width: 239px;
+}
+
+.contact-us-container {
+  width: calc(70vw);
+}
+
+.h1-tag-overlay-effect{
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  font-size: 30px;
+  font-weight: bold;
   color: #b12e2a;
 }
 
@@ -96,6 +124,17 @@
   .main-image {
     background-image: url(/MainImageMobile.jpg);
     height: 300px !important;
+  }
+
+  .accreditation-image{
+    width: 150px;
+    height: 150px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .h1-tag-overlay-effect{
+    position: relative;
   }
 }
 

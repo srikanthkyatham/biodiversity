@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header className="flex justify-between flex-col space-y-5 lg:flex-row lg:items-center px-5 py-5" id="header">
       <Link href='/'>
-        <img className='w-56 md:w-96' src="/logo.png" alt='Bio Diversity' />
+        <img className='brand-logo-image' src="/logo.png" alt='Bio Diversity' />
       </Link>
       <Search />
       <div className="flex flex-col lg:items-end space-y-1">
