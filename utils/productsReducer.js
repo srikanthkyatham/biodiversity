@@ -7,4 +7,7 @@ export const fetchProducts = async () => {
   return response
 }
 
-export const productsNameFilter = (title) => title.toLowerCase().replaceAll(/[^\w\s]/gi, ' ').replace(/\s+/g, ' ').trim().split(' ').join('-')
+export const productsNameFilter = (title) => {
+  console.log(title)
+  return title.toLowerCase().replaceAll(/[^\w\s]/gi, ' ').replace(/\s+/g, ' ').trim().split(' ').join('-')
+}

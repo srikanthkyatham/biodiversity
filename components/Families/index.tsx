@@ -47,7 +47,7 @@ const Families = ({ families = [] }) => {
           style={{ boxShadow: '0 1px 10px rgb(0 0 0 / 10%)' }}
           onClick={() => router.push(`/products_of_family?familyName=${item.title}`)}
         >
-          {item.title}
+          <div className='overflow-hidden overflow-ellipsis'>{item.title}</div>
         </button>
       )
     )

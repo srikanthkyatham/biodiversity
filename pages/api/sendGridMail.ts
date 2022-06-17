@@ -29,6 +29,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.json({ message: `Email has been sent` })
   } catch (error) {
     console.log(error)
-    res.status(500).json({ error: 'Error sending email' })
+    res.status(500).json({ error })
   }
 }

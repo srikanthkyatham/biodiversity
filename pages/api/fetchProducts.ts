@@ -32,6 +32,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.json(products)
   } catch (error) {
     console.log(error)
-    res.status(500).json({ error, errorText: 'Fetch Products Failed' })
+    res.status(500).json({ error: error, errorText: 'Fetch Products Failed' })
   }
 }
