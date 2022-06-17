@@ -39,12 +39,12 @@ export async function getServerSideProps(context: any) {
       familyProducts,
     });
 
-    const fetchAllProducts = familyProducts.map(
-      async (item: any) =>
-        await client.fetch(product_query, {
-          slug: productsNameFilter(item.title),
-        })
-    );
+    const fetchAllProducts = familyProducts.map(async (item: any) => {
+      console.log({ title: item.title });
+      return await client.fetch(product_query, {
+        slug: productsNameFilter(item.title),
+      });
+    });
     const products = await Promise.all(fetchAllProducts);
     return {
       props: {
