@@ -21,7 +21,7 @@ export const productsNameFilter = (title: string): string => {
   console.log({ title });
   return title
     .toLowerCase()
-    .replaceAll(/[^\w\s]/gi, " ")
+    .replace(/[^\w\s]/gi, " ")
     .replace(/\s+/g, " ")
     .trim()
     .split(" ")
