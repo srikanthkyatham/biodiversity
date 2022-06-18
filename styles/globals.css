@@ -134,7 +134,9 @@
   }
 
   .h1-tag-overlay-effect{
-    position: relative;
+    top: unset !important;
+    bottom: 10px;
+    left: 30px !important;
   }
 }
 
