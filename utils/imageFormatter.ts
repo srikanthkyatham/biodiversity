@@ -7,12 +7,16 @@ function urlFor(source: SanityImageSource) {
 }
 
 export const imageFormatter = (size: number, product: any) => {
-  console.log(product)
-  if(size > 1200) {
-    return urlFor(product.desktopImage).width(297).url()
-  } else if(size > 748) {
-    return urlFor(product.iPadImage).width(297).url()
-  } else {
-    return urlFor(product.phoneImage).width(297).url()
+  try {
+    if(size > 1200) {
+      return urlFor(product.desktopImage).width(297).url()
+    } else if(size > 748) {
+      return urlFor(product.iPadImage).width(297).url()
+    } else {
+      return urlFor(product.phoneImage).width(297).url()
+    }
+  } catch (error) {
+    console.log(error)
+    return '/services1.jpg'
   }
 }

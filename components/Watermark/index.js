@@ -45,7 +45,7 @@ const WatermarkComponent = ({ product }) => {
       
       <ReactWaterMark waterMarkText={Config.watermark_text} options={options}>
         <Image
-          src={product ? imageFormatter(screenWidth,product) || '/services1.jpg' : '/services1.jpg'}
+          src={product ? imageFormatter(screenWidth,product) : '/services1.jpg'}
           alt={product.title}
           width={297}
           height={126}
