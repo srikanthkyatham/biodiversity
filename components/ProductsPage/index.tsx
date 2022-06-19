@@ -37,7 +37,7 @@ const ProductsPage = ({ product }: ProductsPageProps) => {
                   <tbody>
                     <tr className="border-b">
                       <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                        Div CAT No:
+                        DIV CAT No:
                       </td>
                       <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                         {product.divCATNo}

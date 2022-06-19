@@ -18,7 +18,7 @@ const Product = ({ product }: ProductProps) => {
       <WatermarkComponent product={product} />
       <ul className="list-none px-5 py-5">
         <li className="flex">
-          <p className="w-20">Div CAT No:</p>
+          <p className="w-20">DIV CAT No:</p>
           <p>{product.divCATNo}</p>
         </li>
         <li className="flex">
