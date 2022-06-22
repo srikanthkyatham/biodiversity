@@ -10,9 +10,11 @@ const ProductsOfFamily = ({ products = [], error = '' }) => {
     <div className='flex justify-center'>
       <Product product={products[0]} />
     </div>
+    <div className='flex flex-col align-center md:flex-row flex-wrap md:justify-start'>
       { 
         products.slice(1).map((item,index) => <Product key={index.toString()} product={item} />)
       }
+    </div>
   </div>
   )
 }

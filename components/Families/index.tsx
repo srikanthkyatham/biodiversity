@@ -13,7 +13,9 @@ const Families = ({ families = [] }) => {
   const selectAlphabet = async (alphabet: string) => {
     setCurrentAlphabet(alphabet)
     const response = await filterSimilarProducts(alphabet.toLowerCase(), families, true)
-    setAvailableProducts(response)
+    if(response.length > 0) {
+      setAvailableProducts(response.sort((a: any, b: any) => a.title.toLowerCase().localeCompare(b.title.toLowerCase())))
+    }
   }
 
   useEffect(() => {
