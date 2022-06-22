@@ -24,7 +24,7 @@ const WatermarkComponent = ({ product }) => {
     textBaseline: 'bottom',
     globalAlpha: 1,
     font: "24px Microsoft Yahei",
-    fillStyle: "#f00"
+    fillStyle: "#808080"
   }
 
   const [screenWidth,setScreenWidth] = useState(window.screen.width || 700)
@@ -50,7 +50,7 @@ const WatermarkComponent = ({ product }) => {
           width={297}
           height={126}
         /> */}
-        <img src={product ? imageFormatter(screenWidth,product) : '/services1.jpg'} alt={product.title} />
+        <img src={product ? imageFormatter(screenWidth,product) : '/logo.png'} alt={product.title} />
       </ReactWaterMark>
   </>
 }

@@ -126,7 +126,7 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
 
   return (
     <div className="flex flex-col items-center my-10" id="contactus">
-      <h3 className="sub-heading">CONTACT US</h3>
+      <h3 className="sub-heading">Contact Us</h3>
       <div className="flex max-w-3xl overflow-hidden justify-center flex-wrap contact-us-container">
         <input 
           type="text" 

@@ -17,6 +17,6 @@ export const imageFormatter = (size: number, product: any) => {
     }
   } catch (error) {
     console.log(error)
-    return '/services1.jpg'
+    return '/logo.png'
   }
 }

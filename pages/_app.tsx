@@ -18,10 +18,10 @@ function MyApp({ Component, pageProps }: Props) {
       <NavigationHeader />
       <Component {...pageProps} />
       <a onClick={() => whatsappChat()} className="float" target="_blank" rel="noreferrer">
-        <i className="fa fa-whatsapp my-float" />
+        <i className="fa fa-whatsapp my-float cursor-pointer" />
       </a>
       <a onClick={() => window.scrollTo(0,0)} className="scroll-top-float" target="_blank" rel="noreferrer">
-        <i className="fa fa-solid fa-arrow-up my-float" />
+        <i className="fa fa-solid fa-arrow-up my-float cursor-pointer" />
       </a>
       <EnquiryForm />
     </Layout>

@@ -106,13 +106,26 @@
   width: calc(70vw);
 }
 
-.h1-tag-overlay-effect{
+.brand-tag-overlay-effect{
   position: absolute;
-  top: 50%;
-  left: 30%;
-  font-size: 30px;
+  top: 35%;
+  left: 10%;
+}
+
+.red-font{
+  font-size: 50px;
   font-weight: bold;
   color: #b12e2a;
+}
+
+.black-font{
+  font-size: 50px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.mobile-brand-tag-overlay-effect {
+  display: none;
 }
 
 @media only screen and (max-width: 800px) {
@@ -133,10 +146,25 @@
     margin-right: auto !important;
   }
 
-  .h1-tag-overlay-effect{
-    top: unset !important;
-    bottom: 10px;
-    left: 30px !important;
+  .brand-tag-overlay-effect{
+    display: none;
+  }
+
+  .mobile-brand-tag-overlay-effect {
+    display: block;
+    text-align: center;
+  }
+
+  .red-font{
+    font-size: 25px;
+    font-weight: bold;
+    color: #b12e2a;
+  }
+  
+  .black-font{
+    font-size: 25px;
+    font-weight: bold;
+    color: #000000;
   }
 }
 

@@ -60,7 +60,7 @@ const LatestProducts = () => {
           <div>
             <div className='flex flex-col items-center px-5 py-10 justify-between lg:flex-row'>
               <div className="space-y-2 mr-5 services-text-tab">
-                <h2 className="font-semibold text-2xl text-left">SYNTHETIC CHEMICAL SERVICES</h2>
+                <h2 className="font-semibold text-2xl text-left">Synthetic Chemical Services</h2>
                 <p className="text-black block py-2 text-1xl font-normal text-justify md:text-2xl text-left">
                   Experienced chemistry teams work on diversified synthetic routes. Knowledge, experience and chemical  synthesis labs, help to carry out complex custom synthesis and collaborative medicinal chemistry program needs for customers. Quality and timely chemical  sourcing occelerate our programs a step further. The synthetic team is skilled to undertake challenges in synthetic organic chemistry, involving various types of chemistry to deliver compounds to customer requirements. 
                   {'\n'}
@@ -77,7 +77,7 @@ const LatestProducts = () => {
           <div>
             <div className='flex flex-col items-center px-5 py-10 justify-between lg:flex-row'>
               <div className="space-y-2 mr-5 services-text-tab">
-                <h2 className="font-semibold text-2xl text-left">CUSTOM SYNTHESIS</h2>
+                <h2 className="font-semibold text-2xl text-left">Custom Synthesis</h2>
                 <p className="text-black block py-2 text-1xl font-normal text-justify md:text-2xl text-left">
                   Diversity Bio Sciences specialize in offering flexible and cost-effective solutions to its clients globally to meet their  custom organic synthesis requirements. With deep knowledge, experience and infrastructure, our team has extensive analytical and synthetic chemical capabilities in providing a competitive edge to your custom synthesis 
                   needs. 
