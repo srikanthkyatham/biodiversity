@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 /* eslint-disable @next/next/no-img-element */
 import MobileDetails from './Mobile'
 import EmailDetails from './Email'

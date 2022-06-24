@@ -1,5 +1,8 @@
+/* eslint-disable @next/next/link-passhref */
 import dynamic from "next/dynamic"
 import { ProductType } from '../../types'
+import Link from 'next/link'
+import { productsNameFilter } from '../../utils/productsReducer'
 
 const WatermarkComponent = dynamic
   (import('../Watermark'),
@@ -14,7 +17,9 @@ const Product = ({ product }: ProductProps) => {
 
   return (
     <div className='w-80 mt-5 border border-slate-600 rounded-sm mr-5' style={{ minWidth: 300 }}>
-      <p className="w-full text-white brand-bg-red-color text-center px-1 py-1">{product.title}</p>
+      <Link href={`/product/${productsNameFilter(product.title)}`}>
+        <p className="w-full text-white brand-bg-red-color text-center px-1 py-1">{product.title}</p>
+      </Link>
       <WatermarkComponent product={product} />
       <ul className="list-none px-5 py-5">
         <li className="flex">

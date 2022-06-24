@@ -12,6 +12,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+          <meta name="color-scheme" content="light only" />
         </Head>
         <body>
           <Main />
