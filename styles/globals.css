@@ -1,3 +1,179 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slick-dots {
+  left: 10px;
+  margin-bottom: 21px !important;
+  width: 120px !important;
+}
+
+.brand-bg-red-color {
+  background-color: #b12e2a !important;
+}
+
+.brand-bg-gray-color {
+  background-color: #202020;
+}
+
+.products-bg-color {
+  background-color: #8080801f
+}
+
+.description-text {
+  font-family: "Roboto"
+}
+
+.products::-webkit-scrollbar {
+  display: none;
+}
+
+.dots-i:global(li.slick-active) button {
+  opacity: .75;
+  color: #000
+}
+
+.slick-dots li button:before {
+  background-color: #b12e2a;
+  height: 10px;
+  width: 10px;
+  text-indent: -9999px;
+  overflow:hidden; 
+  border-radius: 50%;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:20px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.scroll-top-float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:120px;
+	right:20px;
+	background-color:#b12e2a;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+
+.main-image {
+  background-image: url(/MainImage.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 80% 80%;
+}
+
+.sub-heading {
+  font-size: 34px;
+  color: #b12e2a;
+}
+
+.navigation-list-view {
+  margin-right: 50px;
+}
+
+.accreditation-image{
+  width: 150px;
+  height: 150px;
+  margin-right: 20px !important;
+}
+
+.brand-logo-image{
+  width: 239px;
+}
+
+.contact-us-container {
+  width: calc(70vw);
+}
+
+.brand-tag-overlay-effect{
+  position: absolute;
+  top: 35%;
+  left: 10%;
+}
+
+.red-font{
+  font-size: 50px;
+  font-weight: bold;
+  color: #b12e2a;
+}
+
+.black-font{
+  font-size: 50px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.mobile-brand-tag-overlay-effect {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+
+  .sub-heading {
+    font-size: 30px;
+  }
+
+  .main-image {
+    background-image: url(/MainImageMobile.jpg);
+    height: 300px !important;
+  }
+
+  .accreditation-image{
+    width: 150px;
+    height: 150px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .brand-tag-overlay-effect{
+    display: none;
+  }
+
+  .mobile-brand-tag-overlay-effect {
+    display: block;
+    text-align: center;
+  }
+
+  .red-font{
+    font-size: 25px;
+    font-weight: bold;
+    color: #b12e2a;
+  }
+  
+  .black-font{
+    font-size: 25px;
+    font-weight: bold;
+    color: #000000;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

@@ -9,17 +9,31 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
+    "@hirohe/react-watermark": "^0.2.0",
+    "@sanity/client": "^3.3.0",
+    "@sanity/image-url": "^1.0.1",
+    "@sendgrid/mail": "^7.6.2",
     "@tailwindcss/typography": "^0.4.1",
     "daisyui": "^1.14.5",
+    "groq": "^2.29.3",
+    "jparticles": "^3.4.0",
+    "lorem-ipsum": "^2.0.4",
     "next": "^12.0.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-slick": "^0.28.1",
+    "react-virtualized": "^9.22.3",
+    "react-watermark-component": "^2.2.1",
+    "slick-carousel": "^1.8.1",
+    "watermarkjs": "^2.1.1"
   },
   "devDependencies": {
     "@types/node": "^16.11.6",
     "@types/react": "^17.0.34",
+    "@types/react-slick": "^0.23.8",
     "autoprefixer": "^10.3.7",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.2",

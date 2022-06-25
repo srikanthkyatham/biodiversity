@@ -1,0 +1,18 @@
+.slick-dots {
+  position: absolute;
+  left: 10px;
+  margin-bottom: 21px;
+  width: 100px !important;
+}
+
+.brand-bg-red-color {
+  background-color: #b12e2a !important;
+}
+
+.brand-bg-gray-color {
+  background-color: #202020;
+}
+
+.description-text {
+  font-family: "Roboto"
+}
