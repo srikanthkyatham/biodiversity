@@ -1,69 +1,110 @@
-import { useState, useEffect } from "react"
+import emailjs from "@emailjs/browser";
+import { useEffect, useState } from "react";
 
 interface ContactUsProps {
   displayEnquiryForm: boolean;
   onConfirmation: () => void;
 }
 
-const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
+const service_id = "service_itfi7jp";
+const template_id = "template_xi4teva";
+const public_key = "-hd1dyS2BTaPPj9xF";
 
-  const [loading,setLoading] = useState(false)
-  const [formInputs,setFormInputs] = useState({
-    name: '',
-    email: '',
-    products: '',
-    phone: '',
-    others: '',
-    message: ''
-  })
+const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
+  const [loading, setLoading] = useState(false);
+  const [formInputs, setFormInputs] = useState({
+    name: "",
+    email: "",
+    products: "",
+    phone: "",
+    others: "",
+    message: "",
+  });
 
   const resetParameters = () => {
     setFormInputs({
-      name: '',
-      email: '',
-      products: '',
-      phone: '',
-      others: '',
-      message: ''
-    })
-    if(displayEnquiryForm) {
-      onConfirmation()
+      name: "",
+      email: "",
+      products: "",
+      phone: "",
+      others: "",
+      message: "",
+    });
+    if (displayEnquiryForm) {
+      onConfirmation();
     }
-  }
+  };
 
   useEffect(() => {
+    emailjs.init(public_key);
+  }, []);
 
-  },[])
+  const sendViaEmailjs = async () => {
+    const { name, others, products, phone, email } = formInputs;
+    var templateParams = {
+      from_name: name,
+      message: others,
+      products: products,
+      mobile_no: phone,
+      from_email: email,
+    };
+    const response = await emailjs.send(
+      //process.env.EMAIL_JS_SERVICE,
+      service_id,
+      //process.env.template_id,
+      template_id,
+      templateParams,
+      public_key
+    );
+    console.log("SUCCESS!", response.status, response.text);
+  };
 
   const sendMail = async () => {
-
     try {
-      setLoading(true)
+      setLoading(true);
       await fetch("/api/sendGridMail", {
-        "method": "POST",
-        "headers": { "content-type": "application/json" },
-        "body": JSON.stringify({
-          ...formInputs
-        })
-      })
-      resetParameters()
-      setLoading(false)
-
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          ...formInputs,
+        }),
+      });
+      resetParameters();
+      setLoading(false);
     } catch (error) {
-      setLoading(false)
+      setLoading(false);
+      console.log(error);
     }
+  };
 
-  }
+  const sendEmails = async () => {
+    try {
+      setLoading(true);
+      await sendViaEmailjs();
+      resetParameters();
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
+  };
 
   function isNumeric(str: number) {
-    if (typeof str != "string") return false  
-    return !isNaN(str) && !isNaN(parseFloat(str))
+    if (typeof str != "string") return false;
+    return !isNaN(str) && !isNaN(parseFloat(str));
   }
 
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
-    if(name === 'phone' && value.length > 1 && !isNumeric(value)) {
-      return
+    console.log(
+      name,
+      value,
+      isNumeric(value),
+      Number.isNaN(value),
+      parseInt(value)
+    );
+    if (name === "phone" && value.length > 1 && !isNumeric(value)) {
+      console.log("here");
+      return;
     }
     setFormInputs({
       ...formInputs,
@@ -71,107 +112,127 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
     });
   };
 
-  if(displayEnquiryForm) {
+  if (displayEnquiryForm) {
     return (
-      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-zinc-300 rounded" style={{ maxWidth: 500, background: 'white', zIndex: 10000 }} id="enquiry">
-        <div className='flex justify-between px-3 py-3'>
+      <div
+        className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border border-zinc-300 rounded"
+        style={{ maxWidth: 500, background: "white", zIndex: 10000 }}
+        id="enquiry"
+      >
+        <div className="flex justify-between px-3 py-3">
           <h3 className="text-1xl">Enquiry Now</h3>
-          <button className='text-xl' onClick={() => onConfirmation()}>X</button>
-        </div>
-        <div className="flex max-w-3xl overflow-hidden justify-center flex-wrap">
-          <input 
-            type="text" 
-            placeholder="Your Name" 
-            className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
-            bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring" 
-            name='name' 
-            value={formInputs.name} 
-            onChange={handleInputChange} 
-          />
-          <input 
-            type="text" 
-            placeholder="Email" 
-            className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
-            bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
-            name='email' 
-            value={formInputs.email}
-            onChange={handleInputChange} />
-          <input 
-            type="tel"
-            maxLength={10}
-            placeholder="Your Phone" 
-            className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
-            bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
-            name='phone' 
-            value={formInputs.phone}
-            onChange={handleInputChange} />
-          <input 
-            type="text" 
-            placeholder="Message" 
-            className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
-            bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
-            name='others' 
-            value={formInputs.others}
-            onChange={handleInputChange} />
-          <button className="px-3 h-11 w-56 mx-5 my-5 text-white brand-bg-red-color rounded-xl description-text" onClick={sendMail}>
-            {loading ? 'Sending...' : 'Send Message'}
+          <button className="text-xl" onClick={() => onConfirmation()}>
+            X
           </button>
         </div>
-    </div>
-    )
+        <div className="flex max-w-3xl overflow-hidden justify-center flex-wrap">
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative  
+            bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
+            name="name"
+            value={formInputs.name}
+            onChange={handleInputChange}
+          />
+          <input
+            type="text"
+            placeholder="Email"
+            className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative 
+            bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
+            name="email"
+            value={formInputs.email}
+            onChange={handleInputChange}
+          />
+          <input
+            type="tel"
+            maxLength={10}
+            placeholder="Your Phone"
+            className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative 
+            bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
+            name="phone"
+            value={formInputs.phone}
+            onChange={handleInputChange}
+          />
+          <input
+            type="text"
+            placeholder="Message"
+            className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative 
+            bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
+            name="others"
+            value={formInputs.others}
+            onChange={handleInputChange}
+          />
+          <button
+            className="px-3 h-11 w-56 mx-5 my-5 text-white brand-bg-red-color rounded-xl description-text"
+            onClick={sendEmails}
+          >
+            {loading ? "Sending..." : "Send Message"}
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return (
     <div className="flex flex-col items-center my-10" id="contactus">
       <h3 className="sub-heading">Contact Us</h3>
       <div className="flex max-w-3xl overflow-hidden justify-center flex-wrap contact-us-container">
-        <input 
-          type="text" 
-          placeholder="Name" 
-          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
+        <input
+          type="text"
+          placeholder="Name"
+          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative  
           bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
-          name='name' 
+          name="name"
           value={formInputs.name}
-          onChange={handleInputChange} />
-        <input 
-          type="text" 
-          placeholder="Email" 
-          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          placeholder="Email"
+          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative 
           bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
-          name='email' 
+          name="email"
           value={formInputs.email}
-          onChange={handleInputChange} />
-        <input 
-          type="text" 
-          placeholder="Products" 
-          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          placeholder="Products"
+          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative 
           bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
-          name='products' 
+          name="products"
           value={formInputs.products}
-          onChange={handleInputChange} />
-        <input 
+          onChange={handleInputChange}
+        />
+        <input
           type="tel"
           maxLength={10}
-          placeholder="Phone" 
-          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
+          placeholder="Phone"
+          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative 
           bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
-          name='phone' 
+          name="phone"
           value={formInputs.phone}
-          onChange={handleInputChange} />
-        <input 
-          type="text" 
-          placeholder="others" 
-          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white 
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          placeholder="others"
+          className="w-full mx-5 my-5 px-3 py-3 placeholder-slate-300 text-slate-600 relative 
           bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring"
-          name='others' 
+          name="others"
           value={formInputs.others}
-          onChange={handleInputChange} />
-        <button className="px-3 h-11 w-56 mx-5 my-5 text-white brand-bg-red-color rounded-xl description-text" onClick={sendMail}>
-          {loading ? 'Sending...' : 'Contact Us'}
+          onChange={handleInputChange}
+        />
+        <button
+          className="px-3 h-11 w-56 mx-5 my-5 text-white brand-bg-red-color rounded-xl description-text"
+          onClick={sendEmails}
+        >
+          {loading ? "Sending..." : "Contact Us"}
         </button>
       </div>
     </div>
   );
-}
+};
 
-export default ContactUs
+export default ContactUs;
