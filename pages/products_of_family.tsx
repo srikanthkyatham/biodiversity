@@ -33,14 +33,8 @@ export async function getServerSideProps(context: any) {
       title
     }`;
     const familyProducts = await client.fetch(query);
-    console.log({
-      familyName: context?.query?.familyName,
-      query,
-      familyProducts,
-    });
 
     const fetchAllProducts = familyProducts.map(async (item: any) => {
-      console.log({ title: item.title });
       return await client.fetch(product_query, {
         slug: productsNameFilter(item.title),
       });

@@ -2,14 +2,14 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
-import Image from "next/image";
 
 const LatestProducts = () => {
 
   const settings = {
     dots: true,
-      slidesToShow: 1,
-      slidesToScroll: 1
+    arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1
   }
 
   return (

@@ -17,7 +17,6 @@ export const fetchProducts = async () => {
 };
 
 export const productsNameFilter = (title: string): string => {
-  console.log({ title });
   return title
     .toLowerCase()
     .replace(/[^\w\s]/gi, " ")

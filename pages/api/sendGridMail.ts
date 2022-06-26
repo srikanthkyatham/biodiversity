@@ -9,7 +9,6 @@ sgMail.setApiKey(key);
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { email, mobileNo, products, name, others } = req.body;
-  console.log(req.body);
   const msg = {
     to: Config.email,
     from: Config.secondary_email,
@@ -24,11 +23,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   };
 
   try {
-    const result = await sgMail.send(msg);
-    console.log("succesful email sent", result);
+    await sgMail.send(msg);
     res.json({ message: `Email has been sent` });
   } catch (error) {
-    console.log("error in sending email");
     console.log(error);
     res.status(500).json({ error });
   }

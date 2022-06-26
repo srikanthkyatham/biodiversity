@@ -79,7 +79,7 @@ const ProductsPage = ({ product }: ProductsPageProps) => {
                       <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                         Chemical Formula
                       </td>
-                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-normal">
                         {product.productOverview}
                       </td>
                     </tr>

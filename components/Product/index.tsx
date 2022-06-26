@@ -15,12 +15,18 @@ interface ProductProps {
 
 const Product = ({ product }: ProductProps) => {
 
+  if(!product) {
+    return <></>
+  }
+
   return (
     <div className='w-80 mt-5 border border-slate-600 rounded-sm mr-5' style={{ minWidth: 300 }}>
       <Link href={`/product/${productsNameFilter(product.title)}`}>
         <p className="w-full text-white brand-bg-red-color text-center px-1 py-1">{product.title}</p>
       </Link>
-      <WatermarkComponent product={product} />
+      <div className="watermark-image">
+        <WatermarkComponent product={product} />
+      </div>
       <ul className="list-none px-5 py-5">
         <li className="flex">
           <p className="w-24">DIV CAT No:</p>
