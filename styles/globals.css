@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* body {
+  background-color: #FFFFFF;
+} */
+
+@media (prefers-color-scheme: dark) {
+  .watermark-image {
+    background-color: #FFFFFF;
+  }
+}
+
 .slick-dots {
   left: 10px;
   margin-bottom: 21px !important;
@@ -126,6 +136,11 @@
 
 .mobile-brand-tag-overlay-effect {
   display: none;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
 }
 
 @media only screen and (max-width: 800px) {
