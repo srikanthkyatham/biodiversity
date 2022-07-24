@@ -34,7 +34,6 @@ const HomePageProducts = () => {
           return [];
         })
         .then((products) => {
-          console.log({ products });
           setProducts(products);
         })
         .catch((error) => console.log(error));

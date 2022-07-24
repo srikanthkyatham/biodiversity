@@ -95,15 +95,8 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
 
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
-    console.log(
-      name,
-      value,
-      isNumeric(value),
-      Number.isNaN(value),
-      parseInt(value)
-    );
+
     if (name === "phone" && value.length > 1 && !isNumeric(value)) {
-      console.log("here");
       return;
     }
     setFormInputs({

@@ -30,7 +30,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         await client.fetch(query, { slug: productsNameFilter(item.title) })
     );
     const products = await Promise.all(fetchAllProducts);
-    console.log({ products });
     res.json(products);
   } catch (error) {
     console.log(error);
