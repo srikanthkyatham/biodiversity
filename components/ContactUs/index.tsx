@@ -56,7 +56,7 @@ const ContactUs = ({ displayEnquiryForm, onConfirmation }: ContactUsProps) => {
       templateParams,
       public_key
     );
-    console.log("SUCCESS!", response.status, response.text);
+    //console.log("SUCCESS!", response.status, response.text);
   };
 
   const sendMail = async () => {
