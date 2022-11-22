@@ -7,7 +7,7 @@ export const filterSimilarProducts = (
   let filteredProducts = [];
   if (family) {
     filteredProducts = filterArray.filter((item) =>
-      item.title.toLowerCase().startsWith(searchText)
+      item?.title?.toLowerCase().startsWith(searchText)
     );
   } else {
     if (searchText?.length < 3) {
