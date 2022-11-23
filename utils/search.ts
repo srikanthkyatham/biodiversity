@@ -1,10 +1,10 @@
 export const filterSimilarProducts = (
-  searchText,
-  filterArray,
+  searchText: string,
+  filterArray: any[],
   family = false
 ) => {
   let count = 0;
-  let filteredProducts = [];
+  let filteredProducts: any = [];
   if (family) {
     filteredProducts = filterArray.filter((item) =>
       item?.title?.toLowerCase().startsWith(searchText)

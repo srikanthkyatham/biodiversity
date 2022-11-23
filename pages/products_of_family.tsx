@@ -26,7 +26,17 @@ const ProductsOfFamilyComponent = (props: any) => (
   <ProductsOfFamily {...props} />
 );
 
-export async function getServerSideProps(context: any) {
+interface Context {
+  query: {
+    familyName: number;
+  };
+}
+
+interface Product {
+  title: string;
+}
+
+export async function getServerSideProps(context: Context) {
   // It's important to default the slug so that it doesn't return "undefined"
   try {
     const query = groq`*[_type == "product" && families[]->title match "${context.query.familyName.toString()}"]{
@@ -34,7 +44,7 @@ export async function getServerSideProps(context: any) {
     }`;
     const familyProducts = await client.fetch(query);
 
-    const fetchAllProducts = familyProducts.map(async (item: any) => {
+    const fetchAllProducts = familyProducts.map(async (item: Product) => {
       return await client.fetch(product_query, {
         slug: productsNameFilter(item.title),
       });
