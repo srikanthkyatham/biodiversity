@@ -2,7 +2,9 @@ import React from "react";
 import Product from "../Product";
 
 const ProductsOfFamily = ({ products = [], error = "" }) => {
-  console.log(error);
+  if (error === "") {
+    console.log(error);
+  }
 
   return (
     <div className="px-5 py-5w-5/6 m-auto md:w-11/12 mt-5">
