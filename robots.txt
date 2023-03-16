@@ -1,0 +1,8 @@
+Sitemap: https://www.diversitybiosciences.com/sitemap.xml			
+			
+User-agent: *			
+Disallow: 			
+Disallow: /cgi-bin/			
+			
+			
+Sitemap: https://www.diversitybiosciences.com/sitemap.xml			
