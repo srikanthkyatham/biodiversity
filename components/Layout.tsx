@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { ReactNode } from "react";
 import { description } from "../lib/constants";
+import { useRouter } from 'next/router';
 
 type Props = {
   children: ReactNode;
@@ -9,6 +10,9 @@ type Props = {
 const title = "Bio diversity sciences";
 
 export default function Layout({ children }: Props) {
+  
+  const router = useRouter();
+  
   return (
     <>
       <Head>
