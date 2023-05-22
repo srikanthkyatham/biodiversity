@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Footer from "../components/Footer";
 
 const scaffold_synthesis = () =>{
@@ -5,139 +6,133 @@ const scaffold_synthesis = () =>{
 	const faqsection = [
                         {
                         	"id": "faq1",
-                            "title": "What are the impurities in different pharmaceutical preparations?",
-                            "text": "Impurities are unwanted chemical substances that are completely different from the chemical composition of different drug substances. They may differ in structure, chemistry and enantiomer."
+                            "title": "What is scaffold synthesis?",
+                            "text": "Scaffold synthesis involves foam formation, freezing, drying and cross-linking of lyophilised gel in solution containing cross-linking agent. It also involves foam purification and freeze-drying."
                         },
                         {
                         	"id": "faq2",
-                            "title": "What are the different sources of impurities?",
-                            "text": "The different sources of impurities include degradation, manufacturing or synthetic procedures, container, storage conditions, contamination and excipients."
+                            "title": "What are the different methods used to synthesize scaffolds?",
+                            "text": "The different methods used to synthesize scaffolds include 3D printing; gas foaming; rapid prototyping; fabrication; tissue engineering; regeneration; electro spinning and phase generation."
                         },
                         {
                         	"id": "faq3",
-                            "title": "What is the significance of testing impurities?",
-                            "text": "If impurities are present beyond acceptance limits, they may affect the safety, quality, efficacy and identity of drug products or substances. They may also cause product degradation and lead to serious problems regarding product stability. Therefore, proper quantitative and qualitative impurity testing is crucial."
+                            "title": "What are scaffold limitations?",
+                            "text": "Developed scaffolds may exhibit limitations like mechanical failure of materials; immunogenic reactions to implanted materials and material-related infection."
                         },
                         {
                         	"id": "faq4",
-                            "title": "What are reference standards?",
-                            "text": "Reference standards are characterized samples of excipients, drug substances, degradation products, reportable impurities and compendial reagents. Scientists use reference standards to regulate qualitative and quantitative data, calibrators and performance standards."
+                            "title": "How do sterilize scaffolds?",
+                            "text": "We initiate scaffold sterilization using ethylene oxide at 41-degrees C for 13 hours with 42% humidity. Other procedures and components can also be used to sterilize scaffolds."
                         },
                         {
                         	"id": "faq5",
-                            "title": "How do you test impurities?",
-                            "text": "The different methods to test impurities include chromatography, TLC or thin-layer chromatography and HPLC."
+                            "title": "How to classify scaffolds?",
+                            "text": "The 5 types of scaffolds used across the world are prefabricated modular system scaffold elements; tube and coupler fittings or components; timber scaffolds; bamboo scaffolds and H/frame or façade modular system scaffolds."
                         }
 
                     ];
 	const list1 = [
 					{
 						"id": 1,
-						"data": "Customized chemicals"
+						"data": "Functional scaffold production using cell-based expression systems or cell-free protein synthesis."
 					},
 					{
 						"id": 2,
-						"data": "Value added and fully customized synthesis"
+						"data": "Characterization of resulting conjugates in animal models and tumor cell cultures."
 					},
 					{
 						"id": 3,
-						"data": "Milligram to kilogram batch synthesis potential"
-					},
-					{
-						"id": 4,
-						"data": "Project management and planning"
-					},
-					{
-						"id": 5,
-						"data": "Process development and optimization"
-					},
-					{
-						"id": 6,
-						"data": "Fully developed analytical and purification potentials"
+						"data": "One-on-one customized drug conjugations."
 					}
 				];
 	const list2 = [
 					
 					{
 						"id": 7,
-						"data": "Small and large chemistry potentials"
+						"data": "You choose your preferred scaffolds."
 					},
 					{
 						"id": 8,
-						"data": "Advanced analytical and synthetic platform"
+						"data": "You also choose your preferred compounds"
 					},
 					{
 						"id": 9,
-						"data": "Synthetic route optimization and design"
-					},
-					{
-						"id": 10,
-						"data": "High efficiency and cost-effectiveness"
+						"data": "And we synthesize everything for you as per your requirements."
 					}
 				];
     
     return (
     <>
-    <div className="flex flex-col items-center px-5 px-10 py-5 space-y-10 my-10 page-container" id="aboutus">
-        <h1 className="main-heading">Get the Best API Impurities at Diversity Bio Sciences</h1>
-        <div>                
-            <p>
-            Diversity Bio Sciences manufactures and supplies several <strong>API impurities</strong> needed by the pharmaceutical companies for studying the quality, biological safety and stability of their products. We have several API impurities in stock with CoA or certificate of analysis along with the all-inclusive characterization data, such as HPLC Purity, Mass and 1H-NMR. We are also one of the most well-known manufacturers and suppliers of <strong>USP related compound</strong> and other potential impurities according to requirement or specification.
-            </p>
-            <p>Besides manufacturing pharmaceutical impurities, we are also active in <strong>reference standards</strong>, custom synthesis and <strong>impurity standards</strong>. We manufacture all impurities using trustworthy scientific procedures, such as organic synthesis, chromatography for isolation and enrichment and degradation.</p>
-            
-        </div>
-
-        <div>
-            <h2 className="sub-heading">Custom Synthesis of Working Standard/Reference Standards</h2>
-            <p>
-            We know that impurities in different pharmaceutical products can be a major issue. Therefore, we completely synthesize and characterize required reference standards, working standards, API impurities and R&D Compounds within deadlines.
-            </p>
-            <p>Our project planning chemists and scientists excel in designing synthetic routes for new and common compounds. Our custom synthesis solutions include synthesis of intermediates, stable isotope labelled analogs, nucleic acid derivatives, building blocks, metabolites, standardized reference compounds and impurities. With us, you can also expect:</p>
-            
-            <div style={{ "margin": "20px" }}>
-            <ul>
-            	{list1.map((worklist1) =>{
+        <Head>
+            <title>Scaffold Synthesis Services | Diversitybiosciences.com</title>
+            <meta name="description" content="Our high-quality scaffold synthesis services for drug discovery and development. Our expert team utilizes advanced techniques to design and synthesize diverse scaffolds" />
+            <meta name="keywords" content="scaffold synthesis, drug discovery, scaffold design, scaffold synthesis services, drug development, diversity-oriented synthesis, diverse scaffolds, research needs, drug discovery process, diversity biosciences" />
+      </Head>
+        <div className="flex flex-col items-center px-5 px-10 py-5 space-y-10 my-10 page-container" id="aboutus">
+            <h1 className="main-heading">Boost Your In-House Collection with the Scaffold Synthesis Services of Diversity Bio Sciences</h1>
+            <div>                
+                <p>
+                As per studies, traditional IgG scaffolds may no longer serve as the right format for targeted payload delivery. That’s why the protein engineering community has now begun to discover alternative, high-binding protein scaffolds in the form of antibody mimics besides using antibody remains as targeting moieties.
+                </p>
+                <p>Possessing skilled experience in <strong>scaffold synthesis</strong> and design, Diversity Bio Sciences offers all-inclusive scaffold-drug conjugates development solutions for all its customers. We develop different varieties of perfectly engineered scaffolds that can meet your conjugation requirements.</p>
                 
-	                return(
-	            	<li key={worklist1.id}>{worklist1.data}</li>
-	                );
-            	})
-            	}
-            </ul>
-        </div>
-        <div style={{ "margin": "20px" }}>
-            <p  style={{ "marginBottom": "15px" }}>Our custom synthesis fortes include:</p>
-            <ul>
-            	{list2.map((worklist2) =>{
-                
-	                return(
-	            	<li key={worklist2.id}>{worklist2.data}</li>
-	                );
-            	})
-            	}
-            </ul>
-        </div>
+            </div>
 
-            <p>Specifically, we give our clients a wide assortment of cooperation models and services, from first-time synthesis of commercially unavailable and complex compounds to the supply of unique chemicals to meet production requirements. We are also one of the most famous and authentic manufacturers and suppliers of the Alprazolam EP impurity in India and even abroad.</p>
-            <p>Recognizing and eliminating different impurities is the key to successful and safe product commercialization for the pharmaceutical industries. For the best services in this realm, get in touch with our scientists at <a href="mailto:sales@diversitybiosciences.com">sales@diversitybiosciences.com.</a> You can even give us a call at +91 9948872227.</p>
-        </div>
-
-        <div>
-            <h3 className="sub-heading">Frequently Asked Questions (FAQs)</h3>
-            {faqsection.map((faqlist) =>{
+            <div>
+                <h2 className="sub-heading">Our Total Synthesis Services</h2>
+                <p>
+                We, at Diversity Bio Sciences have been developing antibody-drug conjugates since our inception in 2017. Now, we offer personalized SDC development solutions which include but are not restricted to the following:
+                </p>            
                 
-                return(
-                <div className="faqsection" key={faqlist.id}>
-                    <h4>{faqlist.title}</h4>
-                    <p>{faqlist.text}</p>
-                </div>        
-                );
-            })
-            }
-            
+                <div style={{ "margin": "20px" }}>
+                    <ul>
+                        {list1.map((worklist1) =>{
+                        
+                            return(
+                            <li key={worklist1.id}>{worklist1.data}</li>
+                            );
+                        })
+                        }
+                    </ul>
+                </div>
+
+                <h2>Our Scaffold Synthesis Procedure</h2>
+                <p>With our scaffold synthesis service you get to custom synthesis at the cost of stock products. Synthesis of all novel molecules based on scaffolds lets you boost your in-house selection as you want. More robust and faster than waiting for products, our scaffold-based synthesis service keeps you in complete control right from the beginning till the end. Our scaffold synthesis procedure goes like this:</p>
+
+                <div style={{ "margin": "20px" }}>
+                    <p  style={{ "marginBottom": "15px" }}>Our custom synthesis fortes include:</p>
+                    <ul>
+                        {list2.map((worklist2) =>{
+                        
+                            return(
+                            <li key={worklist2.id}>{worklist2.data}</li>
+                            );
+                        })
+                        }
+                    </ul>
+                </div>
+
+                <p>We customize the entire procedure as per your requirements while helping you monitor the same by providing monthly reports. You can even make major or minor adjustments during the procedure.</p>
+                <p>With state-of-the-art research facilities, equipped with the most advanced analytic instruments and latest procedures, the scientists at Diversity Bio Sciences possess good experience in concluding successful projects. Due to our wide experience in organic synthesis of scaffolds, we can create exclusive scaffold library projects for drug discovery in our laboratory. </p>
+                
+                <p>If you are interested in scaffold or total synthesis, do not hesitate to get in touch with us for details. We are available on call at +91 9948872227 or you can even write to us at <a href="mailto:sales@diversitybiosciences.com">sales@diversitybiosciences.com.</a> You can even give us a call at +91 9948872227.</p>
+            </div>
+
+            <div>
+                <h3 className="sub-heading">Frequently Asked Questions (FAQs)</h3>
+                {faqsection.map((faqlist) =>{
+                    
+                    return(
+                    <div className="faqsection" key={faqlist.id}>
+                        <h4>{faqlist.title}</h4>
+                        <p>{faqlist.text}</p>
+                    </div>        
+                    );
+                })
+                }
+                
+            </div>
         </div>
-    </div>
 
     <Footer />
     </>

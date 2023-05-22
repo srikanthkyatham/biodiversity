@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Footer from "../components/Footer";
 
 const process_development = ()=>
@@ -5,6 +6,11 @@ const process_development = ()=>
     
     return (
     <>
+        <Head>
+            <title>Process Development Services | DiversityBioSciences.com</title>
+            <meta name="description" content="We offer industry leading process development services for biologics and biosimilar. Our team of experts can help you to optimize your process, reduce timelines" />
+            <meta name="keywords" content="process development, biologics, biosimilars, regulatory compliance, Diversity BioSciences, Process optimization, Route scouting" />
+      </Head>
         <div className="flex flex-col items-center px-5 px-10 py-5 space-y-10 my-10 page-container" id="aboutus">
             <h1 className="main-heading">Diversity Bio Sciences: Transforming Ideas into Molecules with Process Development and Optimization</h1>
             <div>                

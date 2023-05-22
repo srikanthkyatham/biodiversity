@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Footer from "../components/Footer";
 
 const custom_synthesis_of_intermediates_api = () =>
@@ -35,6 +36,11 @@ const custom_synthesis_of_intermediates_api = () =>
     
     return (
     <>
+        <Head>
+            <title>Custom Synthesis of Intermediates & API | Diversity BioSciences</title>
+            <meta name="description" content="We offer custom synthesis of intermediates and APIs for pharmaceutical companies. Our experts specialize in organic synthesis, delivering high-quality products" />
+            <meta name="keywords" content="Custom synthesis of intermediates & API’s, Active pharmaceutical ingredient (API), custom synthesis, intermediates API, pharmaceutical, organic synthesis, high-quality products, Diversity BioSciences" />
+      </Head>
         <div className="flex flex-col items-center px-5 px-10 py-5 space-y-10 my-10 page-container" id="aboutus">
             <h1 className="main-heading">Diversity Bio Sciences: Delivering Sustained Growth through Custom Synthesis of Intermediates & API’s</h1>
             <div>                

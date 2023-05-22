@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Footer from "../components/Footer";
 
 const new_chemical_entity_research = () =>
@@ -65,6 +66,11 @@ const list1 = [
 
     return (
     <>
+        <Head>
+            <title>New Chemical Entity Research | Diversity BioSciences</title>
+            <meta name="description" content="At Diversity BioSciences, we specialize in the research and development of new chemical entities for various industries to create effective and safe compounds." />
+            <meta name="keywords" content="new chemical entity research, research and development, Diversity BioSciences, scientists, innovative methods, effective compounds, safe compounds, bio industries" />
+      </Head>
         <div className="flex flex-col items-center px-5 px-10 py-5 space-y-10 my-10 page-container" id="aboutus">
             <h1 className="main-heading">Increase Clients with New Chemical Entity (NCE) Research Services of Diversity Bio Sciences</h1>
             <div>                

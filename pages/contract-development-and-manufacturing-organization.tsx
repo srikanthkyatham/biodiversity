@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Footer from "../components/Footer";
 
 const contract_development_and_manufacturing_organization = () =>
@@ -47,6 +48,11 @@ const list1 = [
     
     return (
     <>
+        <Head>
+            <title>Contract Development and Manufacturing Organization | DiversityBio</title>
+            <meta name="description" content="We are a leading Contract Development and Manufacturing Organization (CDMO) offering reliable and efficient services for drug development and manufacturing." />
+            <meta name="keywords" content="contract development and manufacturing organization, CDMO, drug development, pharmaceuticals, biotech, Diversity BioSciences" />
+      </Head>
         <div className="flex flex-col items-center px-5 px-10 py-5 space-y-10 my-10 page-container" id="aboutus">
             <h1 className="main-heading">Diversity Bio Sciences: The Ultimate Contract Research Organization (CRO) Offering Specialty Services</h1>
             <div>

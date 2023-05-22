@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Footer from "../components/Footer";
 
 const hetero_cyclic_chemistry = ()=>
@@ -71,6 +72,11 @@ const list2 = [
 
     return (
     <>
+        <Head>
+            <title>Hetero-Cyclic Chemistry | Diversity Bio Sciences.com</title>
+            <meta name="description" content="Our team of experts is dedicated to exploring the properties and applications of heterocyclic compounds, with a focus on drug discovery and development" />
+            <meta name="keywords" content="hetero-cyclic chemistry, heterocycles, drug discovery, chemical synthesis, chemical properties, drug development, Diversity Bio Sciences" />
+      </Head>
         <div className="flex flex-col items-center px-5 px-10 py-5 space-y-10 my-10 page-container" id="aboutus">
             <h1 className="main-heading">Outperform Others with the Medicinal Chemistry Services of Diversity Bio Sciences</h1>
             <div>                
